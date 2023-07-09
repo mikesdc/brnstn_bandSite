@@ -1,1 +1,226 @@
-/*# sourceMappingURL=bio.css.map */
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 700;
+}
+* {
+  font-family: "Avenir Next";
+}
+
+html {
+  font-size: 100%;
+}
+
+p,
+body,
+h1,
+h2,
+h3,
+span,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+.nav {
+  background-color: #323232;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav a,
+.nav a:visited,
+.nav a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+.nav__home {
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: #fff;
+  padding: 1.2rem;
+}
+.nav__site-nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #fff;
+}
+.nav__site-nav--link {
+  width: 50vw;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  border-bottom: 0.3rem solid #323232;
+}
+.nav__site-nav--link:hover, .nav__site-nav--linkactive {
+  border-bottom: 0.3rem solid #fff;
+  font-weight: 600;
+}
+
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 17rem;
+}
+.hero img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100vw;
+  height: 17rem;
+  position: absolute;
+}
+.hero--overlay {
+  position: absolute;
+  width: 100vw;
+  height: 17rem;
+  background-color: #323232;
+  opacity: 0.5;
+}
+.hero--title {
+  width: 100vw;
+  height: 17rem;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+.hero--title h1 {
+  padding-left: 1.7rem;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #fff;
+  z-index: 5;
+}
+
+.about,
+.gallery,
+.footer {
+  padding: 1.2rem;
+}
+
+.heading {
+  color: #323232;
+  font-weight: 600;
+  font-size: 1.7rem;
+  padding: 0.7rem 0 0;
+}
+
+.about--img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 1rem 0;
+}
+.about--review, .about--reviewer {
+  display: block;
+  padding: 0.25rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #323232;
+  line-height: 1.5;
+}
+.about--band-name {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #000;
+  padding: 1.5rem 0 0.5rem;
+}
+.about--paragraph {
+  padding: 0.7rem 0;
+  font-size: 1.1rem;
+  color: #323232;
+}
+
+.gallery {
+  background-color: #fafafa;
+}
+.gallery__grid {
+  display: flex;
+  flex-direction: column;
+}
+.gallery img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 60%;
+  padding: 0.7rem 0;
+}
+.gallery img:last-of-type {
+  padding: 0.7rem 0 0;
+}
+
+.footer {
+  background-color: #323232;
+  color: #fff;
+}
+.footer__header--header {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.5rem 0;
+}
+.footer__header--social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 10rem;
+  padding: 0 0 2rem;
+}
+.footer__header--social img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 2rem;
+  height: 2rem;
+}
+.footer__bandsite {
+  font-size: 2rem;
+  padding: 2rem 0 1.5rem;
+}
+.footer__bandsite a,
+.footer__bandsite a:hover,
+.footer__bandsite a:visited,
+.footer__bandsite a:active {
+  color: #fff;
+  text-decoration: none;
+}
+.footer__bandsite--tablet {
+  display: none;
+}
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  .footer__bandsite--tablet {
+    display: initial;
+  }
+}
+.footer__card--container {
+  display: flex;
+  flex-direction: column;
+}
+.footer__card--name {
+  font-weight: 600;
+  padding-bottom: 2rem;
+}
+.footer__card--address {
+  font-weight: 400;
+  padding-bottom: 2rem;
+}
+.footer__card--email {
+  font-weight: 400;
+  padding-bottom: 2rem;
+}
+.footer__copyright {
+  font-size: 0.85rem;
+  padding-bottom: 0.7rem;
+}/*# sourceMappingURL=bio.css.map */

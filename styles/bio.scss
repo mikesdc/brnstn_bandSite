@@ -1,4 +1,229 @@
 @use "./partials/variables" as *;
-@use "./global" as *;
 @use "./partials/mixins" as *;
 
+@import "./global";
+
+//Nav Bar
+
+.nav {
+  background-color: $darkgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  a,
+  a:visited,
+  a:hover {
+    text-decoration: none;
+    color: $white;
+  }
+
+  &__home {
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: $white;
+    padding: 1.2rem;
+  }
+
+  &__site-nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: $white;
+
+    &--link {
+      width: 50vw;
+      height: 2.5rem;
+      display: flex;
+      justify-content: center;
+      border-bottom: 0.3rem solid $darkgrey;
+
+      &:hover,
+      &active {
+        border-bottom: 0.3rem solid $white;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+//Hero
+
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 17rem;
+
+  img {
+    object-fit: cover;
+    width: 100vw;
+    height: 17rem;
+    position: absolute;
+  }
+
+  &--overlay {
+    position: absolute;
+    width: 100vw;
+    height: 17rem;
+    background-color: $darkgrey;
+    opacity: 0.5;
+  }
+
+  &--title {
+    width: 100vw;
+    height: 17rem;
+    position: absolute;
+    display: flex;
+    align-items: center;
+
+    h1 {
+      padding-left: 1.7rem;
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: $white;
+      z-index: 5;
+    }
+  }
+}
+
+//Main
+
+.about,
+.gallery,
+.footer {
+  padding: 1.2rem;
+}
+
+.heading {
+  color: $darkgrey;
+  font-weight: 600;
+  font-size: 1.7rem;
+  padding: 0.7rem 0 0;
+}
+
+.about {
+  &--img {
+    width: 100%;
+    object-fit: cover;
+    margin: 1rem 0;
+  }
+
+  &--review,
+  &--reviewer {
+    display: block;
+    padding: 0.25rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $darkgrey;
+    line-height: 1.5;
+  }
+
+  &--band-name {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: $black;
+    padding: 1.5rem 0 0.5rem;
+  }
+
+  &--paragraph {
+    padding: 0.7rem 0;
+    font-size: 1.1rem;
+    color: $darkgrey;
+  }
+}
+
+.gallery {
+  background-color: $alabaster;
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 60%;
+    padding: 0.7rem 0;
+
+    &:last-of-type {
+      padding: 0.7rem 0 0;
+    }
+  }
+}
+
+.footer {
+  background-color: $darkgrey;
+  color: $white;
+
+  &__header {
+    &--header {
+      font-size: 2rem;
+      font-weight: 600;
+      padding: 1.5rem 0;
+    }
+
+    &--social {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 10rem;
+      padding: 0 0 2rem;
+
+      img {
+        object-fit: contain;
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  &__bandsite {
+    font-size: 2rem;
+    padding: 2rem 0 1.5rem;
+
+    a,
+    a:hover,
+    a:visited,
+    a:active {
+      color: $white;
+      text-decoration: none;
+    }
+
+    &--tablet {
+      display: none;
+      @include tablet {
+        display: initial;
+      }
+    }
+  }
+
+  &__card {
+    &--container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--name {
+      font-weight: 600;
+      padding-bottom: 2rem;
+    }
+
+    &--address {
+      font-weight: 400;
+      padding-bottom: 2rem;
+    }
+    &--email {
+      font-weight: 400;
+      padding-bottom: 2rem;
+    }
+  }
+  &__copyright {
+    font-size: 0.85rem;
+    padding-bottom: 0.7rem;
+  }
+}
