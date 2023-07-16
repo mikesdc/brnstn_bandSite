@@ -44,63 +44,62 @@ html {
   text-decoration: none;
   color: #fff;
 }
-.nav__home {
+.nav__logo-container {
   display: flex;
   justify-content: center;
-  font-size: 2.5rem;
   text-decoration: none;
   color: #fff;
-  padding: 1.2rem;
+  padding: 1rem 0 1rem;
 }
-.nav__site-nav {
+.nav__site {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   text-decoration: none;
   color: #fff;
 }
-.nav__site-nav--link {
+.nav__site-link {
   width: 50vw;
-  height: 2.5rem;
+  height: 1.5rem;
   display: flex;
   justify-content: center;
-  border-bottom: 0.3rem solid #323232;
+  border-bottom: 0.2rem solid #323232;
 }
-.nav__site-nav--link:hover, .nav__site-nav--linkactive {
-  border-bottom: 0.3rem solid #fff;
+.nav__site-link:hover, .nav__site-linkactive {
+  border-bottom: 0.2rem solid #fff;
   font-weight: 600;
 }
 
 .hero {
-  position: relative;
   width: 100vw;
-  height: 17rem;
+  height: 11.5rem;
+  position: relative;
 }
 .hero img {
+  width: 100vw;
+  height: 11.5rem;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100vw;
-  height: 17rem;
   position: absolute;
 }
-.hero--overlay {
-  position: absolute;
+.hero__overlay {
   width: 100vw;
-  height: 17rem;
+  height: 11.5rem;
+  position: absolute;
   background-color: #323232;
   opacity: 0.5;
 }
-.hero--title {
+.hero__title {
   width: 100vw;
-  height: 17rem;
+  height: 11.5rem;
   position: absolute;
   display: flex;
   align-items: center;
 }
-.hero--title h1 {
-  padding-left: 1.7rem;
-  font-size: 1.9rem;
+.hero__header {
+  padding-left: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #fff;
   z-index: 5;
@@ -109,39 +108,41 @@ html {
 .about,
 .gallery,
 .footer {
-  padding: 1.2rem;
+  padding: 1rem;
 }
 
 .heading {
   color: #323232;
   font-weight: 600;
-  font-size: 1.7rem;
-  padding: 0.7rem 0 0;
+  font-size: 1.5rem;
+  padding: 0.5rem 0 0;
 }
 
-.about--img {
+.about__img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  margin: 1rem 0;
+  margin: 0.7rem 0;
 }
-.about--review, .about--reviewer {
+.about__review, .about__reviewer {
   display: block;
-  padding: 0.25rem 0;
-  font-size: 1.1rem;
+  padding: 0.17rem 0;
+  font-size: 0.9rem;
   font-weight: 600;
+  line-height: 1.375rem;
   color: #323232;
   line-height: 1.5;
 }
-.about--band-name {
-  font-size: 1.3rem;
+.about__band-name {
+  font-size: 0.9rem;
   font-weight: 400;
   color: #000;
   padding: 1.5rem 0 0.5rem;
 }
-.about--paragraph {
+.about__paragraph {
   padding: 0.7rem 0;
-  font-size: 1.1rem;
+  font-size: 0.83rem;
+  line-height: 1.2rem;
   color: #323232;
 }
 
@@ -167,27 +168,27 @@ html {
   background-color: #323232;
   color: #fff;
 }
-.footer__header--header {
-  font-size: 2rem;
+.footer__header-text {
+  font-size: 1.7rem;
   font-weight: 600;
-  padding: 1.5rem 0;
+  padding: 1.3rem 0;
 }
-.footer__header--social {
+.footer__header-social {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 10rem;
+  width: 9rem;
   padding: 0 0 2rem;
 }
-.footer__header--social img {
+.footer__header-social img {
   -o-object-fit: contain;
      object-fit: contain;
-  width: 2rem;
-  height: 2rem;
+  width: 1.8rem;
+  height: 1.8rem;
 }
 .footer__bandsite {
   font-size: 2rem;
-  padding: 2rem 0 1.5rem;
+  padding: 3rem 0 1.5rem;
 }
 .footer__bandsite a,
 .footer__bandsite a:hover,
@@ -196,31 +197,38 @@ html {
   color: #fff;
   text-decoration: none;
 }
-.footer__bandsite--tablet {
+.footer__bandsite-tablet {
   display: none;
 }
 @media only screen and (min-width: 768px) and (max-width: 1279px) {
-  .footer__bandsite--tablet {
+  .footer__bandsite-tablet {
     display: initial;
   }
 }
-.footer__card--container {
+.footer__card {
+  line-height: 1.4rem;
+  font-size: 0.9rem;
+}
+.footer__card-container {
   display: flex;
   flex-direction: column;
 }
-.footer__card--name {
+.footer__card-name, .footer__card-address, .footer__card-email {
+  padding-bottom: 1.2rem;
+}
+.footer__card-name {
   font-weight: 600;
-  padding-bottom: 2rem;
+  padding-top: 0.5rem;
 }
-.footer__card--address {
+.footer__card-address, .footer__card-email {
   font-weight: 400;
-  padding-bottom: 2rem;
-}
-.footer__card--email {
-  font-weight: 400;
-  padding-bottom: 2rem;
 }
 .footer__copyright {
-  font-size: 0.85rem;
+  font-size: 0.73rem;
   padding-bottom: 0.7rem;
+}
+
+.footer__bandsite-logo img {
+  padding: 3rem 0 1rem;
+  width: 120px;
 }/*# sourceMappingURL=bio.css.map */

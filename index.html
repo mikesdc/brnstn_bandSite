@@ -8,14 +8,17 @@
   </head>
   <body>
     <nav class="nav">
-      <a href="./index.html"><div class="nav__home">BANDSITE</div></a>
-      <div class="nav__site-nav">
-        <a href="./index.html"
-          ><div class="nav__site-nav--link nav__site-nav--linkactive">
-            Biography
-          </div></a
-        >
-        <a href=""><div class="nav__site-nav--link">Shows</div></a>
+      <a href="./index.html"
+        ><div class="nav__logo-container">
+          <img class="nav__logo" src="./assets/Logo/Logo-bandsite.svg" alt="bandsite logo" />
+        </div>
+      </a>
+
+      <div class="nav__site">
+        <a href="./index.html">
+          <div class="nav__site-link nav__site-linkactive">Biography</div>
+        </a>
+        <a href=""><div class="nav__site-link">Shows</div></a>
       </div>
     </nav>
 
@@ -24,27 +27,29 @@
         src="../assets/images/hero-bio.jpg"
         alt="flowers and a bee with colorful photo overlay"
       />
-      <div class="hero--overlay"></div>
-      <div class="hero--title"><h1>The Bees Knees</h1></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__title">
+        <h1 class="hero__header">The Bees Knees</h1>
+      </div>
     </header>
 
     <main>
       <section class="about">
-        <h2 class="about--heading heading">About the Musicians</h2>
+        <h2 class="heading">About the Musicians</h2>
         <img
           src="./assets/images/band.jpg"
           alt="rock band on stage playing in front of a crowd"
-          class="about--img"
+          class="about__img"
         />
-        <span class="about--review"
+        <span class="about__review"
           >“We push each other to be the best. It’s not uncommon for one of us
-          to say ‘this needs to be better, back to the drawing board’”</span
-        >
-        <span class="about--reviewer"
-          >- Bryan Teddy, lead vocalist of The Bees Knees</span
-        >
-        <h3 class="about--band-name">The Bees Knees</h3>
-        <div class="about--paragraph">
+          to say ‘this needs to be better, back to the drawing board’”
+        </span>
+        <span class="about__reviewer">
+          - Bryan Teddy, lead vocalist of The Bees Knees
+        </span>
+        <h3 class="about__band-name">The Bees Knees</h3>
+        <div class="about__paragraph">
           The Bees Knees is a pop rock band originating from San Francisco,
           California. The band consists of lead vocalist Bryan Teddy, guitarist
           Mack Tolkens, guitarist Andrew Green, bassist Kent Zulkee and drummer
@@ -54,7 +59,7 @@
           Cat’s Meow), Adams was confident the band could succeed even further,
           pushing them to sign with Magenta Records.
         </div>
-        <div class="about--paragraph">
+        <div class="about__paragraph">
           From there, the band has soared, gaining international recognition and
           ranking in the top 10 on the Poster Charts. New fans immediately fell
           in love with the band’s original and organic attitude, solidifying
@@ -70,67 +75,101 @@
       <section class="gallery">
         <h2 class="heading">Photo Gallery</h2>
         <div class="gallery__grid">
-          <img src="./assets/images/Photo-gallery-1.jpg" alt="concert goers observing the stage" />
-          <img src="./assets/images/Photo-gallery-2.jpg" alt="female fan with arms raised" />
-          <img src="./assets/images/Photo-gallery-3.jpg" alt="concert goer reaching upwards towards the stage" />
-          <img src="./assets/images/Photo-gallery-4.jpg" alt="back of female concert fan reaching up towards the stage" />
-          <img src="./assets/images/Photo-gallery-5.jpg" alt="band on stage, confetti shooting upward, towards the crowd" />
-          <img src="./assets/images/Photo-gallery-6.jpg" alt="band lead singing to fans" />
-          <img src="./assets/images/Photo-gallery-7.jpg" alt="colorful stage setting with crowd in front of stage" />
-          <img src="./assets/images/Photo-gallery-8.jpg" alt="close-up of dj's turntable" />
-          <img src="./assets/images/Photo-gallery-9.jpg" alt="confetti scattering over crowd" />
+          <img
+            src="./assets/images/Photo-gallery-1.jpg"
+            alt="concert goers observing the stage"
+          />
+          <img
+            src="./assets/images/Photo-gallery-2.jpg"
+            alt="female fan with arms raised"
+          />
+          <img
+            src="./assets/images/Photo-gallery-3.jpg"
+            alt="concert goer reaching upwards towards the stage"
+          />
+          <img
+            src="./assets/images/Photo-gallery-4.jpg"
+            alt="back of female concert fan reaching up towards the stage"
+          />
+          <img
+            src="./assets/images/Photo-gallery-5.jpg"
+            alt="band on stage, confetti shooting upward, towards the crowd"
+          />
+          <img
+            src="./assets/images/Photo-gallery-6.jpg"
+            alt="band lead singing to fans"
+          />
+          <img
+            src="./assets/images/Photo-gallery-7.jpg"
+            alt="colorful stage setting with crowd in front of stage"
+          />
+          <img
+            src="./assets/images/Photo-gallery-8.jpg"
+            alt="close-up of dj's turntable"
+          />
+          <img
+            src="./assets/images/Photo-gallery-9.jpg"
+            alt="confetti scattering over crowd"
+          />
         </div>
       </section>
     </main>
 
     <footer class="footer">
       <div class="footer__header">
-        <div class="footer__header--header">Get in Touch</div>
-        <div class="footer__header--social">
-          <img src="./assets/icons/SVG/Icon-instagram.svg" alt="instagram icon">
-          <img src="./assets/icons/SVG/Icon-facebook.svg" alt="facebook icon">
-          <img src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter icon">
+        <div class="footer__header-text">Get in Touch</div>
+        <div class="footer__header-social">
+          <img
+            src="./assets/icons/SVG/Icon-instagram.svg"
+            alt="instagram icon"
+          />
+          <img src="./assets/icons/SVG/Icon-facebook.svg" alt="facebook icon" />
+          <img src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter icon" />
         </div>
       </div>
-      <div class="footer__bandsite footer__bandsite--tablet">BANDSITE</div>
+      <div class="footer__bandsite footer__bandsite-tablet">BANDSITE</div>
 
-      <div class="footer__card--container">
+      <div class="footer__card-container">
         <div class="footer__card">
-          <div class="footer__card--name">
+          <div class="footer__card-name">
             <p>Cam Adams</p>
             <p>The Bees Knees Management</p>
           </div>
-          <div class="footer__card--address">
+          <div class="footer__card-address">
             <p>503 Broadway Penthouse</p>
             <p>New York, NY 10012, USA</p>
           </div>
-          <div class="footer__card--email">info@thebeesknees.com</div>
+          <div class="footer__card-email">info@thebeesknees.com</div>
         </div>
         <div class="footer__card">
-          <div class="footer__card--name">
+          <div class="footer__card-name">
             <p>Pearl Gregg</p>
             <p>Limitless Artist Group</p>
           </div>
-          <div class="footer__card--address">
+          <div class="footer__card-address">
             <p>Booking Agent for</p>
             <p>US / South America / Japan</p>
           </div>
-          <div class="footer__card--email">pearl.gregg@limitlessag.com</div>
+          <div class="footer__card-email">pearl.gregg@limitlessag.com</div>
         </div>
         <div class="footer__card">
-          <div class="footer__card--name">
+          <div class="footer__card-name">
             <p>Carson Whyte</p>
             <p>ARCH Entertainment</p>
           </div>
-          <div class="footer__card--address">
+          <div class="footer__card-address">
             <p>Booking Agent for</p>
             <p>UK / EU / AU</p>
           </div>
-          <div class="footer__card--email">cwhyte@archentertainment.com</div>
+          <div class="footer__card-email">cwhyte@archentertainment.com</div>
         </div>
 
-        <div class="footer__bandsite footer__bandsite--mobile"><a href="./index.html">BANDSITE</a></div>
-        
+        <div class="footer__bandsite-logo">
+          <a href="./index.html">
+            <img src="./assets/Logo/Logo-bandsite.svg" alt="bandsite logo" />
+          </a>
+        </div>
+
         <div class="footer__copyright">
           Copyright The Bees Knees © 2021 All Rights Reserved
         </div>

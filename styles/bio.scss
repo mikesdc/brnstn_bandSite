@@ -18,33 +18,34 @@
     color: $white;
   }
 
-  &__home {
-    display: flex;
-    justify-content: center;
-    font-size: 2.5rem;
-    text-decoration: none;
-    color: $white;
-    padding: 1.2rem;
+  &__logo {
+    &-container {
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
+      color: $white;
+      padding: 1rem 0 1rem;
+    }
   }
 
-  &__site-nav {
+  &__site {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     text-decoration: none;
     color: $white;
 
-    &--link {
+    &-link {
       width: 50vw;
-      height: 2.5rem;
+      height: 1.5rem;
       display: flex;
       justify-content: center;
-      border-bottom: 0.3rem solid $darkgrey;
+      border-bottom: 0.2rem solid $darkgrey;
 
       &:hover,
       &active {
-        border-bottom: 0.3rem solid $white;
+        border-bottom: 0.2rem solid $white;
         font-weight: 600;
       }
     }
@@ -54,39 +55,35 @@
 //Hero
 
 .hero {
+  @include heroSize;
   position: relative;
-  width: 100vw;
-  height: 17rem;
 
   img {
+    @include heroSize;
     object-fit: cover;
-    width: 100vw;
-    height: 17rem;
     position: absolute;
   }
 
-  &--overlay {
+  &__overlay {
+    @include heroSize;
     position: absolute;
-    width: 100vw;
-    height: 17rem;
     background-color: $darkgrey;
     opacity: 0.5;
   }
 
-  &--title {
-    width: 100vw;
-    height: 17rem;
+  &__title {
+    @include heroSize;
     position: absolute;
     display: flex;
     align-items: center;
+  }
 
-    h1 {
-      padding-left: 1.7rem;
-      font-size: 1.9rem;
-      font-weight: 600;
-      color: $white;
-      z-index: 5;
-    }
+  &__header {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $white;
+    z-index: 5;
   }
 }
 
@@ -95,46 +92,50 @@
 .about,
 .gallery,
 .footer {
-  padding: 1.2rem;
+  padding: 1rem;
 }
 
 .heading {
   color: $darkgrey;
   font-weight: 600;
-  font-size: 1.7rem;
-  padding: 0.7rem 0 0;
+  font-size: 1.5rem;
+  padding: 0.5rem 0 0;
 }
 
 .about {
-  &--img {
+  &__img {
     width: 100%;
     object-fit: cover;
-    margin: 1rem 0;
+    margin: 0.7rem 0;
   }
 
-  &--review,
-  &--reviewer {
+  &__review,
+  &__reviewer {
     display: block;
-    padding: 0.25rem 0;
-    font-size: 1.1rem;
+    padding: 0.17rem 0;
+    font-size: 0.9rem;
     font-weight: 600;
+    line-height: 1.375rem;
     color: $darkgrey;
     line-height: 1.5;
   }
 
-  &--band-name {
-    font-size: 1.3rem;
+  &__band-name {
+    font-size: 0.9rem;
     font-weight: 400;
     color: $black;
     padding: 1.5rem 0 0.5rem;
   }
 
-  &--paragraph {
+  &__paragraph {
     padding: 0.7rem 0;
-    font-size: 1.1rem;
+    font-size: 0.83rem;
+    line-height: 1.2rem;
     color: $darkgrey;
   }
 }
+
+// Gallery
 
 .gallery {
   background-color: $alabaster;
@@ -156,35 +157,37 @@
   }
 }
 
+// Footer
+
 .footer {
   background-color: $darkgrey;
   color: $white;
 
   &__header {
-    &--header {
-      font-size: 2rem;
+    &-text {
+      font-size: 1.7rem;
       font-weight: 600;
-      padding: 1.5rem 0;
+      padding: 1.3rem 0;
     }
 
-    &--social {
+    &-social {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      width: 10rem;
+      width: 9rem;
       padding: 0 0 2rem;
 
       img {
         object-fit: contain;
-        width: 2rem;
-        height: 2rem;
+        width: 1.8rem;
+        height: 1.8rem;
       }
     }
   }
 
   &__bandsite {
     font-size: 2rem;
-    padding: 2rem 0 1.5rem;
+    padding: 3rem 0 1.5rem;
 
     a,
     a:hover,
@@ -194,7 +197,7 @@
       text-decoration: none;
     }
 
-    &--tablet {
+    &-tablet {
       display: none;
       @include tablet {
         display: initial;
@@ -203,27 +206,38 @@
   }
 
   &__card {
-    &--container {
+    line-height: 1.4rem;
+    font-size: 0.9rem;
+
+    &-container {
       display: flex;
       flex-direction: column;
     }
 
-    &--name {
-      font-weight: 600;
-      padding-bottom: 2rem;
+    &-name,
+    &-address,
+    &-email {
+      padding-bottom: 1.2rem;
     }
 
-    &--address {
-      font-weight: 400;
-      padding-bottom: 2rem;
+    &-name {
+      font-weight: 600;
+      padding-top: 0.5rem;
     }
-    &--email {
+
+    &-address,
+    &-email {
       font-weight: 400;
-      padding-bottom: 2rem;
     }
   }
   &__copyright {
-    font-size: 0.85rem;
+    font-size: 0.73rem;
     padding-bottom: 0.7rem;
   }
+}
+
+.footer__bandsite-logo img {
+  padding: 3rem 0 1rem;
+
+  width: 120px;
 }
