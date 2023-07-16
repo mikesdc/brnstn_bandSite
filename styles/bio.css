@@ -61,6 +61,11 @@ html {
     padding: 0 4rem 0 2.2rem;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .nav__logo-container {
+    padding: 0 4rem 0 6.5rem;
+  }
+}
 .nav__site {
   display: flex;
   justify-content: space-around;
@@ -76,12 +81,23 @@ html {
     margin-top: 0.2rem;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .nav__site {
+    margin-top: 0.65rem;
+    gap: 2.5rem;
+  }
+}
 .nav__site-link {
   width: 50vw;
   height: 1.5rem;
   display: flex;
   justify-content: center;
   border-bottom: 0.2rem solid #323232;
+}
+@media only screen and (min-width: 1280px) {
+  .nav__site-link {
+    border-bottom: 0.25rem solid #323232;
+  }
 }
 @media only screen and (min-width: 768px) {
   .nav__site-link {
@@ -94,9 +110,19 @@ html {
     width: auto;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .nav__site-link {
+    height: 4.8rem;
+  }
+}
 .nav__site-link:hover, .nav__site-linkactive {
   border-bottom: 0.2rem solid #fff;
   font-weight: 600;
+}
+@media only screen and (min-width: 1280px) {
+  .nav__site-link:hover, .nav__site-linkactive {
+    border-bottom: 0.25rem solid #fff;
+  }
 }
 
 .hero {
@@ -107,6 +133,11 @@ html {
 @media only screen and (min-width: 768px) {
   .hero {
     height: 28rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero {
+    height: 38rem;
   }
 }
 .hero img {
@@ -121,6 +152,11 @@ html {
     height: 28rem;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .hero img {
+    height: 38rem;
+  }
+}
 .hero__overlay {
   width: 100vw;
   height: 11.5rem;
@@ -133,6 +169,11 @@ html {
     height: 28rem;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .hero__overlay {
+    height: 38rem;
+  }
+}
 .hero__title {
   width: 100vw;
   height: 11.5rem;
@@ -143,6 +184,11 @@ html {
 @media only screen and (min-width: 768px) {
   .hero__title {
     height: 28rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero__title {
+    height: 38rem;
   }
 }
 .hero__header {
@@ -158,6 +204,11 @@ html {
     font-size: 3.8rem;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .hero__header {
+    padding-left: 7rem;
+  }
+}
 
 .about,
 .gallery,
@@ -169,6 +220,13 @@ html {
   .gallery,
   .footer {
     padding: 2.7rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .about,
+  .gallery,
+  .footer {
+    padding: 3rem 7rem;
   }
 }
 
@@ -190,6 +248,12 @@ html {
     margin: auto;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .about__content {
+    width: 55rem;
+    margin: auto;
+  }
+}
 .about__img {
   width: 100%;
   height: 50vw;
@@ -201,10 +265,17 @@ html {
 }
 @media only screen and (min-width: 768px) {
   .about__img {
-    height: 43vw;
-    -o-object-position: 0 -7vw;
-       object-position: 0 -7vw;
-    max-height: 20rem;
+    height: 17rem;
+    -o-object-position: 0 -7rem;
+       object-position: 0 -7rem;
+    margin: 2rem 0;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .about__img {
+    height: 28rem;
+    -o-object-position: 0 -7rem;
+       object-position: 0 -7rem;
     margin: 2rem 0;
   }
 }
@@ -225,6 +296,17 @@ html {
 @media only screen and (min-width: 768px) {
   .about__review {
     font-size: 1.4rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .about__review {
+    width: 42rem;
+    padding-bottom: 0.8rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .about__reviewer {
+    padding-bottom: 2rem;
   }
 }
 .about__band-name {
@@ -259,6 +341,13 @@ html {
     line-height: 1.4rem;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .about__paragraph {
+    padding: 1.5rem 0 0;
+    width: 26.5rem;
+    line-height: 1.4rem;
+  }
+}
 
 .gallery {
   background-color: #fafafa;
@@ -279,6 +368,11 @@ html {
     justify-content: space-between;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .gallery__grid {
+    padding-top: 2rem;
+  }
+}
 .gallery img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -290,6 +384,12 @@ html {
   .gallery img {
     width: 27.5vw;
     justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .gallery img {
+    width: 26vw;
+    padding: 0.6rem 0;
   }
 }
 .gallery img:last-of-type {
@@ -384,6 +484,13 @@ html {
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: 3rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .footer__card-container {
+    justify-content: flex-start;
+    gap: 5rem;
+    padding-bottom: 2rem;
   }
 }
 .footer__card-name, .footer__card-address, .footer__card-email {

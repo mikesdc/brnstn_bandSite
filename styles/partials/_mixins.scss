@@ -25,11 +25,21 @@
   }
 }
 
+@mixin screen-size($min-width) {
+  @media only screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
 @mixin heroSize {
   width: 100vw;
   height: 11.5rem;
   
   @include tablet {
     height: 28rem;
+  }
+
+  @include desktop() {
+    height: 38rem;
   }
 }
