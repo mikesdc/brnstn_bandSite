@@ -12,9 +12,8 @@
 // Desktop - marked at 1280px (1280px and above)
 
 @mixin tablet {
-  @media only screen and (min-width: 768px) 
-  // and (max-width: 1279px)  
-  {
+  @media only screen and (min-width: 768px) {
+    // and (max-width: 1279px) {
     @content;
   }
 }
@@ -25,8 +24,8 @@
   }
 }
 
-@mixin screen-size($min-width) {
-  @media only screen and (min-width: $min-width) {
+@mixin mobile-to-tablet {
+  @media only screen and (min-width: 500px) and (max-width: 767px) {
     @content;
   }
 }
@@ -34,7 +33,7 @@
 @mixin heroSize {
   width: 100vw;
   height: 11.5rem;
-  
+
   @include tablet {
     height: 28rem;
   }

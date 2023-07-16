@@ -284,6 +284,13 @@
     display: flex;
     flex-direction: column;
 
+    @include mobile-to-tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
     @include tablet {
       flex-direction: row;
       flex-wrap: wrap;
@@ -301,6 +308,14 @@
     height: 60%;
     padding: 0.7rem 0;
 
+
+    @include mobile-to-tablet {
+      padding: 0;
+      width: 30vw;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
     @include tablet {
       width: 27.5vw;
       justify-content: space-between;
@@ -313,8 +328,17 @@
 
     &:last-of-type {
       padding: 0.7rem 0 0;
+
+      @include mobile-to-tablet {
+        padding: 0;
+      }
     }
   }
+}
+
+.grow {
+  @include mobile-to-tablet {
+  flex-basis: 30rem;}
 }
 
 // Footer
@@ -394,7 +418,7 @@
         display: none;
       }
     }
-  }
+      }
 
   &__card {
     line-height: 1.4rem;

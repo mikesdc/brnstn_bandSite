@@ -361,6 +361,14 @@ html {
   display: flex;
   flex-direction: column;
 }
+@media only screen and (min-width: 500px) and (max-width: 767px) {
+  .gallery__grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}
 @media only screen and (min-width: 768px) {
   .gallery__grid {
     flex-direction: row;
@@ -380,6 +388,14 @@ html {
   height: 60%;
   padding: 0.7rem 0;
 }
+@media only screen and (min-width: 500px) and (max-width: 767px) {
+  .gallery img {
+    padding: 0;
+    width: 30vw;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+}
 @media only screen and (min-width: 768px) {
   .gallery img {
     width: 27.5vw;
@@ -394,6 +410,17 @@ html {
 }
 .gallery img:last-of-type {
   padding: 0.7rem 0 0;
+}
+@media only screen and (min-width: 500px) and (max-width: 767px) {
+  .gallery img:last-of-type {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 767px) {
+  .grow {
+    flex-basis: 30rem;
+  }
 }
 
 .footer {
