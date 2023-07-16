@@ -49,6 +49,9 @@ html {
   text-decoration: none;
   color: #fff;
 }
+.nav__logo {
+  width: 7.5rem;
+}
 .nav__logo-container {
   display: flex;
   justify-content: center;
