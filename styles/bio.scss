@@ -11,6 +11,10 @@
   flex-direction: column;
   align-items: center;
 
+  @include tablet {
+    flex-direction: row;
+  }
+
   a,
   a:visited,
   a:hover {
@@ -25,6 +29,10 @@
       text-decoration: none;
       color: $white;
       padding: 1rem 0 1rem;
+
+      @include tablet {
+        padding: 0 4rem 0 2.2rem;
+      }
     }
   }
 
@@ -36,12 +44,27 @@
     text-decoration: none;
     color: $white;
 
+    @include tablet {
+      justify-content: flex-start;
+      gap: 3.5rem;
+      margin-top: 0.2rem;
+    }
+
     &-link {
       width: 50vw;
       height: 1.5rem;
       display: flex;
       justify-content: center;
       border-bottom: 0.2rem solid $darkgrey;
+
+      @include tablet {
+        align-items: center;
+      }
+
+      @include tablet {
+        height: 4rem;
+        width: auto;
+      }
 
       &:hover,
       &active {
@@ -84,6 +107,11 @@
     font-weight: 600;
     color: $white;
     z-index: 5;
+
+    @include tablet {
+      padding-left: 2rem;
+      font-size: 3.8rem;
+    }
   }
 }
 
@@ -93,6 +121,10 @@
 .gallery,
 .footer {
   padding: 1rem;
+
+  @include tablet {
+    padding: 2.7rem;
+  }
 }
 
 .heading {
@@ -100,13 +132,34 @@
   font-weight: 600;
   font-size: 1.5rem;
   padding: 0.5rem 0 0;
+
+  @include tablet {
+    font-size: 2.2rem;
+  }
 }
 
 .about {
+  &__content {
+    @include tablet {
+      width: 37rem;
+      margin: auto;
+    }
+  }
+
   &__img {
     width: 100%;
+    height: 50vw;
+
     object-fit: cover;
+    object-position: bottom;
     margin: 0.7rem 0;
+
+    @include tablet {
+      height: 43vw;
+      object-position: 0 -7vw;
+      max-height: 20rem;
+      margin: 2rem 0;
+    }
   }
 
   &__review,
@@ -118,6 +171,16 @@
     line-height: 1.375rem;
     color: $darkgrey;
     line-height: 1.5;
+
+    @include tablet {
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__review {
+    @include tablet {
+      font-size: 1.4rem;
+    }
   }
 
   &__band-name {
@@ -125,6 +188,19 @@
     font-weight: 400;
     color: $black;
     padding: 1.5rem 0 0.5rem;
+
+    @include tablet {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+  }
+
+  &__history-container {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__paragraph {
@@ -132,6 +208,12 @@
     font-size: 0.83rem;
     line-height: 1.2rem;
     color: $darkgrey;
+
+    @include tablet {
+      width: 17.5rem;
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+    }
   }
 }
 
@@ -140,9 +222,19 @@
 .gallery {
   background-color: $alabaster;
 
+  @include tablet {
+    padding-bottom: 2rem;
+  }
+  
   &__grid {
     display: flex;
     flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
   }
 
   img {
@@ -150,6 +242,11 @@
     width: 100%;
     height: 60%;
     padding: 0.7rem 0;
+
+    @include tablet {
+      width: 27.5vw;
+      justify-content: space-between;
+    }
 
     &:last-of-type {
       padding: 0.7rem 0 0;
@@ -164,10 +261,28 @@
   color: $white;
 
   &__header {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      gap: 2rem;
+
+      div:last-child {
+        margin-left: auto;
+      }
+    }
+
     &-text {
       font-size: 1.7rem;
       font-weight: 600;
       padding: 1.3rem 0;
+
+      @include tablet {
+        padding: 0;
+        font-size: 2.3rem;
+      }
     }
 
     &-social {
@@ -177,30 +292,43 @@
       width: 9rem;
       padding: 0 0 2rem;
 
+      @include tablet {
+        padding: 0;
+        align-items: center;
+      }
+
       img {
         object-fit: contain;
         width: 1.8rem;
         height: 1.8rem;
+
+        @include tablet {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
       }
     }
   }
 
   &__bandsite {
-    font-size: 2rem;
-    padding: 3rem 0 1.5rem;
+    padding: 3rem 0 1rem;
 
-    a,
-    a:hover,
-    a:visited,
-    a:active {
-      color: $white;
-      text-decoration: none;
+    &-logo {
+      width: 120px;
     }
 
     &-tablet {
       display: none;
       @include tablet {
-        display: initial;
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 0;
+      }
+    }
+
+    &-mobile {
+      @include tablet {
+        display: none;
       }
     }
   }
@@ -212,6 +340,13 @@
     &-container {
       display: flex;
       flex-direction: column;
+
+      @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 3rem;
+      }
     }
 
     &-name,
@@ -233,11 +368,9 @@
   &__copyright {
     font-size: 0.73rem;
     padding-bottom: 0.7rem;
+    
+    @include tablet {
+      font-size: 0.9rem;
+    }
   }
-}
-
-.footer__bandsite-logo img {
-  padding: 3rem 0 1rem;
-
-  width: 120px;
 }

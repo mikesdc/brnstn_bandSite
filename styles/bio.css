@@ -38,6 +38,11 @@ html {
   flex-direction: column;
   align-items: center;
 }
+@media only screen and (min-width: 768px) {
+  .nav {
+    flex-direction: row;
+  }
+}
 .nav a,
 .nav a:visited,
 .nav a:hover {
@@ -51,6 +56,11 @@ html {
   color: #fff;
   padding: 1rem 0 1rem;
 }
+@media only screen and (min-width: 768px) {
+  .nav__logo-container {
+    padding: 0 4rem 0 2.2rem;
+  }
+}
 .nav__site {
   display: flex;
   justify-content: space-around;
@@ -59,12 +69,30 @@ html {
   text-decoration: none;
   color: #fff;
 }
+@media only screen and (min-width: 768px) {
+  .nav__site {
+    justify-content: flex-start;
+    gap: 3.5rem;
+    margin-top: 0.2rem;
+  }
+}
 .nav__site-link {
   width: 50vw;
   height: 1.5rem;
   display: flex;
   justify-content: center;
   border-bottom: 0.2rem solid #323232;
+}
+@media only screen and (min-width: 768px) {
+  .nav__site-link {
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .nav__site-link {
+    height: 4rem;
+    width: auto;
+  }
 }
 .nav__site-link:hover, .nav__site-linkactive {
   border-bottom: 0.2rem solid #fff;
@@ -76,12 +104,22 @@ html {
   height: 11.5rem;
   position: relative;
 }
+@media only screen and (min-width: 768px) {
+  .hero {
+    height: 28rem;
+  }
+}
 .hero img {
   width: 100vw;
   height: 11.5rem;
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
+}
+@media only screen and (min-width: 768px) {
+  .hero img {
+    height: 28rem;
+  }
 }
 .hero__overlay {
   width: 100vw;
@@ -90,12 +128,22 @@ html {
   background-color: #323232;
   opacity: 0.5;
 }
+@media only screen and (min-width: 768px) {
+  .hero__overlay {
+    height: 28rem;
+  }
+}
 .hero__title {
   width: 100vw;
   height: 11.5rem;
   position: absolute;
   display: flex;
   align-items: center;
+}
+@media only screen and (min-width: 768px) {
+  .hero__title {
+    height: 28rem;
+  }
 }
 .hero__header {
   padding-left: 1rem;
@@ -104,11 +152,24 @@ html {
   color: #fff;
   z-index: 5;
 }
+@media only screen and (min-width: 768px) {
+  .hero__header {
+    padding-left: 2rem;
+    font-size: 3.8rem;
+  }
+}
 
 .about,
 .gallery,
 .footer {
   padding: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  .about,
+  .gallery,
+  .footer {
+    padding: 2.7rem;
+  }
 }
 
 .heading {
@@ -117,12 +178,35 @@ html {
   font-size: 1.5rem;
   padding: 0.5rem 0 0;
 }
+@media only screen and (min-width: 768px) {
+  .heading {
+    font-size: 2.2rem;
+  }
+}
 
+@media only screen and (min-width: 768px) {
+  .about__content {
+    width: 37rem;
+    margin: auto;
+  }
+}
 .about__img {
   width: 100%;
+  height: 50vw;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
   margin: 0.7rem 0;
+}
+@media only screen and (min-width: 768px) {
+  .about__img {
+    height: 43vw;
+    -o-object-position: 0 -7vw;
+       object-position: 0 -7vw;
+    max-height: 20rem;
+    margin: 2rem 0;
+  }
 }
 .about__review, .about__reviewer {
   display: block;
@@ -133,11 +217,34 @@ html {
   color: #323232;
   line-height: 1.5;
 }
+@media only screen and (min-width: 768px) {
+  .about__review, .about__reviewer {
+    padding-bottom: 1rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .about__review {
+    font-size: 1.4rem;
+  }
+}
 .about__band-name {
   font-size: 0.9rem;
   font-weight: 400;
   color: #000;
   padding: 1.5rem 0 0.5rem;
+}
+@media only screen and (min-width: 768px) {
+  .about__band-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .about__history-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 .about__paragraph {
   padding: 0.7rem 0;
@@ -145,13 +252,32 @@ html {
   line-height: 1.2rem;
   color: #323232;
 }
+@media only screen and (min-width: 768px) {
+  .about__paragraph {
+    width: 17.5rem;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+  }
+}
 
 .gallery {
   background-color: #fafafa;
 }
+@media only screen and (min-width: 768px) {
+  .gallery {
+    padding-bottom: 2rem;
+  }
+}
 .gallery__grid {
   display: flex;
   flex-direction: column;
+}
+@media only screen and (min-width: 768px) {
+  .gallery__grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 .gallery img {
   -o-object-fit: cover;
@@ -159,6 +285,12 @@ html {
   width: 100%;
   height: 60%;
   padding: 0.7rem 0;
+}
+@media only screen and (min-width: 768px) {
+  .gallery img {
+    width: 27.5vw;
+    justify-content: space-between;
+  }
 }
 .gallery img:last-of-type {
   padding: 0.7rem 0 0;
@@ -168,10 +300,29 @@ html {
   background-color: #323232;
   color: #fff;
 }
+@media only screen and (min-width: 768px) {
+  .footer__header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    gap: 2rem;
+  }
+  .footer__header div:last-child {
+    margin-left: auto;
+  }
+}
 .footer__header-text {
   font-size: 1.7rem;
   font-weight: 600;
   padding: 1.3rem 0;
+}
+@media only screen and (min-width: 768px) {
+  .footer__header-text {
+    padding: 0;
+    font-size: 2.3rem;
+  }
 }
 .footer__header-social {
   display: flex;
@@ -180,29 +331,43 @@ html {
   width: 9rem;
   padding: 0 0 2rem;
 }
+@media only screen and (min-width: 768px) {
+  .footer__header-social {
+    padding: 0;
+    align-items: center;
+  }
+}
 .footer__header-social img {
   -o-object-fit: contain;
      object-fit: contain;
   width: 1.8rem;
   height: 1.8rem;
 }
-.footer__bandsite {
-  font-size: 2rem;
-  padding: 3rem 0 1.5rem;
+@media only screen and (min-width: 768px) {
+  .footer__header-social img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
-.footer__bandsite a,
-.footer__bandsite a:hover,
-.footer__bandsite a:visited,
-.footer__bandsite a:active {
-  color: #fff;
-  text-decoration: none;
+.footer__bandsite {
+  padding: 3rem 0 1rem;
+}
+.footer__bandsite-logo {
+  width: 120px;
 }
 .footer__bandsite-tablet {
   display: none;
 }
-@media only screen and (min-width: 768px) and (max-width: 1279px) {
+@media only screen and (min-width: 768px) {
   .footer__bandsite-tablet {
-    display: initial;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .footer__bandsite-mobile {
+    display: none;
   }
 }
 .footer__card {
@@ -212,6 +377,14 @@ html {
 .footer__card-container {
   display: flex;
   flex-direction: column;
+}
+@media only screen and (min-width: 768px) {
+  .footer__card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 3rem;
+  }
 }
 .footer__card-name, .footer__card-address, .footer__card-email {
   padding-bottom: 1.2rem;
@@ -227,8 +400,8 @@ html {
   font-size: 0.73rem;
   padding-bottom: 0.7rem;
 }
-
-.footer__bandsite-logo img {
-  padding: 3rem 0 1rem;
-  width: 120px;
+@media only screen and (min-width: 768px) {
+  .footer__copyright {
+    font-size: 0.9rem;
+  }
 }/*# sourceMappingURL=bio.css.map */
