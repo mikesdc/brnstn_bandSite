@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: 600;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: 700;
 }
 * {
@@ -480,7 +480,7 @@ html {
   padding: 3rem 0 1rem;
 }
 .footer__bandsite-logo {
-  width: 120px;
+  width: 7.5rem;
 }
 .footer__bandsite-tablet {
   display: none;
