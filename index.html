@@ -22,7 +22,7 @@
         <a href="./index.html">
           <div class="nav__site-link nav__site-linkactive">Biography</div>
         </a>
-        <a href=""><div class="nav__site-link">Shows</div></a>
+        <a href="./pages/shows.html"><div class="nav__site-link">Shows</div></a>
       </div>
     </nav>
 
@@ -126,56 +126,72 @@
         </div>
       </section>
 
-      <section class="about comments">
+      <section class="comments">
         <h2 class="heading">Join the Conversation</h2>
 
-        <div class="about__content comments__content">
-          <div class="comments__form"></div>
-          <div class="comments__comments-container">
-            <div class="comments__comment comment1"></div>
-            <div class="comments__comment comment2"></div>
-            <div class="comments__comment comment3"></div>
-
-
-          
-
-          <img
-            class="about__img"
-            src="./assets/images/band.jpg"
-            alt="rock band on stage playing in front of a crowd"
-          />
-          <span class="about__review"
-            >“We push each other to be the best. It’s not uncommon for one of us
-            to say ‘this needs to be better, back to the drawing board’”
-          </span>
-          <span class="about__reviewer">
-            - Bryan Teddy, lead vocalist of The Bees Knees
-          </span>
-          <h3 class="about__band-name">The Bees Knees</h3>
-          <div class="about__history-container">
-            <div class="about__paragraph">
-              The Bees Knees is a pop rock band originating from San Francisco,
-              California. The band consists of lead vocalist Bryan Teddy,
-              guitarist Mack Tolkens, guitarist Andrew Green, bassist Kent
-              Zulkee and drummer Freddie Fischer. The band achieved its first
-              commercial success as an unsigned act, drawing attention from
-              manager Cam Adams. Having worked with other popular acts (The
-              Elephant In The Room, One Trick Pony, The Cat’s Meow), Adams was
-              confident the band could succeed even further, pushing them to
-              sign with Magenta Records.
+        <div class="comments__content">
+          <div class="comments__form">
+            <div class="comments__form-photo">
+              <img
+                src="./assets/images/Mohan-muruge.jpg"
+                alt="user avatar, mohan"
+              />
             </div>
-            <div class="about__paragraph">
-              From there, the band has soared, gaining international recognition
-              and ranking in the top 10 on the Poster Charts. New fans
-              immediately fell in love with the band’s original and organic
-              attitude, solidifying their place as one of the hottest and
-              fastest up and coming acts of this century. Fans affectionately
-              refer to themselves as “The Hive” and are drawn to their candid
-              and authentic performances on stage. Looking forward to touring in
-              the future, The Bees Knees are currently recording their second
-              studio album, looking to be released in late 2021.
+
+            <div class="comments__form-content">
+              <form id="commentsForm">
+                <div><label for="nameField" class="label">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  id="nameField"
+                  class="commentsField commentsField--name"
+                /></div>
+                <div><label for="commentField">Comment</label>
+                <textarea name="comment" id="commentField" class="commentsField commentsField--comment" placeholder="Add a new comment"></textarea></div>
+                <div class="comments__form-buttonContainer"><button type="submit" class="comments__button formButton">Comment</button></div>
+              </form>
             </div>
           </div>
+          <div class="comments__comments-container">
+
+
+            <!-- <div class="comments__comment-card comment1">
+              <div class="comments__comment-photo"></div>
+              <div class="comments__comment-content">
+                <div class="comments__comment-header">
+                  <div class="comments__comment-header-name">headername</div>
+                  <div class="comments__comment-header-date">headerdate</div>
+                </div>
+                <div class="comments__comment-comment">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptatem doloremque, praesentium sunt quod veniam animi
+                  voluptas nostrum, excepturi eos, non voluptate obcaecati
+                  quaerat? Corrupti vitae aliquid totam adipisci expedita
+                  accusamus?
+                </div>
+              </div>
+            </div>
+            <div class="comments__comment comment2">Comment 2</div>
+            <div class="comments__comment-photo"></div>
+            <div class="comments__comment-content">
+              <div class="comments__comment-header">
+                <div class="comments__comment-name"></div>
+                <div class="comments__comment-date"></div>
+              </div>
+              <div class="comments__comment-comment"></div>
+            </div>
+          </div>
+          <div class="comments__comment comment3">comment 3</div>
+          <div class="comments__comment-photo"></div>
+          <div class="comments__comment-content">
+            <div class="comments__comment-header">
+              <div class="comments__comment-name"></div>
+              <div class="comments__comment-date"></div>
+            </div>
+            <div class="comments__comment-comment"></div>
+          </div> -->
         </div>
       </section>
     </main>
@@ -273,3 +289,5 @@
     </footer>
   </body>
 </html>
+
+<script src="./scripts/index-page.js"></script>

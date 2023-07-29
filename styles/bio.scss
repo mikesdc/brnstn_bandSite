@@ -3,100 +3,6 @@
 
 @import "./global";
 
-//Nav Bar
-
-.nav {
-  background-color: $darkgrey;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @include tablet {
-    flex-direction: row;
-  }
-
-  a,
-  a:visited,
-  a:hover {
-    text-decoration: none;
-    color: $white;
-  }
-
-  &__logo {
-    width: 7.5rem;
-    &-container {
-      display: flex;
-      justify-content: center;
-      text-decoration: none;
-      color: $white;
-      padding: 1rem 0 1rem;
-
-      @include tablet {
-        padding: 0 4rem 0 2.2rem;
-      }
-
-      @include desktop {
-        padding: 0 4rem 0 6.5rem;
-      }
-    }
-  }
-
-  &__site {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    font-size: 0.8rem;
-    text-decoration: none;
-    color: $white;
-
-    @include tablet {
-      justify-content: flex-start;
-      gap: 3.5rem;
-      margin-top: 0.2rem;
-    }
-
-    @include desktop {
-      margin-top: 0.65rem;
-      gap: 2.5rem;
-    }
-
-    &-link {
-      width: 50vw;
-      height: 1.5rem;
-      display: flex;
-      justify-content: center;
-      border-bottom: 0.2rem solid $darkgrey;
-
-      @include desktop {
-        border-bottom: 0.25rem solid $darkgrey;
-      }
-
-      @include tablet {
-        align-items: center;
-      }
-
-      @include tablet {
-        height: 4rem;
-        width: auto;
-      }
-
-      @include desktop {
-        height: 4.8rem;
-      }
-
-      &:hover,
-      &active {
-        border-bottom: 0.2rem solid $white;
-        font-weight: 600;
-
-        @include desktop {
-          border-bottom: 0.25rem solid $white;
-        }
-      }
-    }
-  }
-}
-
 //Hero
 
 .hero {
@@ -145,7 +51,8 @@
 
 .about,
 .gallery,
-.footer {
+.footer,
+.comments {
   padding: 1rem;
 
   @include tablet {
@@ -348,137 +255,167 @@
   }
 }
 
-// Footer
+// Comments Section
 
-.footer {
-  background-color: $darkgrey;
-  color: $white;
+.comments {
+  &__content {
+    margin-top: 1.2rem;
 
-  a,
-  a:visited,
-  a:hover {
-    text-decoration: none;
-    color: $white;
+    @include tablet {
+      width: 37rem;
+      margin: auto;
+    }
+
+    @include desktop {
+      width: 32rem;
+      margin: 2rem auto;
+    }
   }
 
-  &__header {
-    @include tablet {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2rem;
-      gap: 2rem;
+  &__form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
-      div:last-child {
+    @include tablet {
+      margin-top: 2.5rem;
+    }
+
+    &-photo {
+      & img {
+        width: 2.8rem;
+        height: 2.8rem;
+        margin-top: 0.9rem;
+        margin-right: 1.2rem;
+        object-fit: cover;
+        object-position: -0.5rem;
+        border-radius: 50%;
+      }
+    }
+
+    &-content {
+      width: 100%;
+
+      & label {
+        font-size: 0.7rem;
+        display: block;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: $silver;
+        padding-bottom: 0.125rem;
+      }
+    }
+
+    &-buttonContainer {
+      @include media-size(500px) {
         margin-left: auto;
       }
     }
+  }
 
-    &-text {
-      font-size: 1.7rem;
-      font-weight: 600;
-      padding: 1.3rem 0;
+  form {
+    @include media-size(500px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 
-      @include tablet {
-        padding: 0;
-        font-size: 2.3rem;
-      }
+  &Field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    background-color: $alabaster;
+    border: 0.12rem solid $mercury;
+    border-radius: 0.25rem;
+    outline: none;
+    padding: 0.7rem 0.7rem;
+    margin-bottom: 1.3rem;
+    color: $black;
+    resize: none;
+
+    &::placeholder {
+      color: $black;
     }
 
-    &-social {
+    @include tablet {
+      min-height: 3rem;
+    }
+    &--name {
+    }
+
+    &--comment {
+      height: 7rem;
+    }
+  }
+
+  &__button {
+    height: 2.5rem;
+    min-width: 9.375rem;
+    width: 100%;
+    background-color: $darkgrey;
+    border: none;
+    border-radius: 0.25rem;
+    color: $white;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1.3rem;
+
+    &:hover {
+      background-color: $black;
+    }
+
+    @include media-size(500px) {
+      width: 9.5rem;
+      margin-left: auto;
+    }
+  }
+
+  &__comment {
+    &-card {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      width: 9rem;
-      padding: 0 0 2rem;
+      padding: 1.2rem 0;
+      width: 100%;
+      border-top: 0.12rem solid $mercury;
 
-      @include tablet {
-        padding: 0;
-        align-items: center;
-      }
-
-      img {
-        object-fit: contain;
-        width: 1.8rem;
-        height: 1.8rem;
-
-        @include tablet {
-          width: 1.5rem;
-          height: 1.5rem;
-        }
+      &:last-of-type {
+        border-bottom: 0.12rem solid $mercury;
       }
     }
-  }
-
-  &__bandsite {
-    padding: 3rem 0 1rem;
-
-    &-logo {
-      width: 7.5rem;
+    &-photo {
+      background-color: $mercury;
+      border-radius: 50%;
+      width: 2.8rem;
+      height: 2.8rem;
+      margin-right: 1.2rem;
+      flex-shrink: 0;
     }
 
-    &-tablet {
-      display: none;
-      @include tablet {
-        display: flex;
-        flex-direction: column-reverse;
-        padding: 0;
-      }
+    &-content {
+      width: 100%;
+      font-size: 0.9rem;
+      line-height: 1.3rem;
+      //must be the same width as form-content box
     }
 
-    &-mobile {
-      @include tablet {
-        display: none;
-      }
-    }
-  }
-
-  &__card {
-    line-height: 1.4rem;
-    font-size: 0.9rem;
-
-    &-container {
-      display: flex;
-      flex-direction: column;
-
-      @include tablet {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding-bottom: 3rem;
-      }
-
-      @include desktop {
-        justify-content: flex-start;
-        gap: 5rem;
-        padding-bottom: 2rem;
-      }
-    }
-
-    &-name,
-    &-address,
-    &-email {
-      padding-bottom: 1.2rem;
-    }
-
-    &-name {
-      font-weight: 600;
+    &-comment {
       padding-top: 0.5rem;
     }
 
-    &-address,
-    &-email {
-      font-weight: 400;
-    }
-  }
-  &__copyright {
-    font-size: 0.73rem;
-    padding-bottom: 0.7rem;
+    &-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
 
-    @include tablet {
-      font-size: 0.9rem;
+      &-name {
+        font-weight: 600;
+        color: $darkgrey;
+      }
+
+      &-date {
+        color: $silver;
+      }
     }
   }
 }

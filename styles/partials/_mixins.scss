@@ -30,7 +30,7 @@
 }
 
 @mixin heroSize {
-  width: 100vw;
+  width: 100%;
   height: 11.5rem;
 
   @include tablet {

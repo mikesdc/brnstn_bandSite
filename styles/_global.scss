@@ -37,3 +37,232 @@ html {
   padding: 0;
   margin: 0;
 }
+
+//Nav Bar
+
+.nav {
+  background-color: $darkgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    text-decoration: none;
+    color: $white;
+  }
+
+  &__logo {
+    width: 7.5rem;
+    &-container {
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
+      color: $white;
+      padding: 1rem 0 1rem;
+
+      @include tablet {
+        padding: 0 4rem 0 2.2rem;
+      }
+
+      @include desktop {
+        padding: 0 4rem 0 6.5rem;
+      }
+    }
+  }
+
+  &__site {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: $white;
+
+    @include tablet {
+      justify-content: flex-start;
+      gap: 3.5rem;
+      margin-top: 0.2rem;
+    }
+
+    @include desktop {
+      margin-top: 0.65rem;
+      gap: 2.5rem;
+    }
+
+    &-link {
+      width: 50vw;
+      height: 1.5rem;
+      display: flex;
+      justify-content: center;
+      border-bottom: 0.2rem solid $darkgrey;
+
+      @include desktop {
+        border-bottom: 0.25rem solid $darkgrey;
+      }
+
+      @include tablet {
+        align-items: center;
+      }
+
+      @include tablet {
+        height: 4rem;
+        width: auto;
+      }
+
+      @include desktop {
+        height: 4.8rem;
+      }
+
+      &:hover,
+      &active {
+        border-bottom: 0.2rem solid $white;
+        font-weight: 600;
+
+        @include desktop {
+          border-bottom: 0.25rem solid $white;
+        }
+      }
+    }
+  }
+}
+
+// Footer
+
+.footer {
+  background-color: $darkgrey;
+  color: $white;
+
+  a,
+  a:visited,
+  a:hover {
+    text-decoration: none;
+    color: $white;
+  }
+
+  &__header {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      gap: 2rem;
+
+      div:last-child {
+        margin-left: auto;
+      }
+    }
+
+    &-text {
+      font-size: 1.7rem;
+      font-weight: 600;
+      padding: 1.3rem 0;
+
+      @include tablet {
+        padding: 0;
+        font-size: 2.3rem;
+      }
+    }
+
+    &-social {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 9rem;
+      padding: 0 0 2rem;
+
+      @include tablet {
+        padding: 0;
+        align-items: center;
+      }
+
+      img {
+        object-fit: contain;
+        width: 1.8rem;
+        height: 1.8rem;
+
+        @include tablet {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+  }
+
+  &__bandsite {
+    padding: 3rem 0 1rem;
+
+    &-logo {
+      width: 7.5rem;
+    }
+
+    &-tablet {
+      display: none;
+      @include tablet {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 0;
+      }
+    }
+
+    &-mobile {
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__card {
+    line-height: 1.4rem;
+    font-size: 0.9rem;
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+
+      @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 3rem;
+      }
+
+      @include desktop {
+        justify-content: flex-start;
+        gap: 5rem;
+        padding-bottom: 2rem;
+      }
+    }
+
+    &-name,
+    &-address,
+    &-email {
+      padding-bottom: 1.2rem;
+    }
+
+    &-name {
+      font-weight: 600;
+      padding-top: 0.5rem;
+    }
+
+    &-address,
+    &-email {
+      font-weight: 400;
+    }
+  }
+  &__copyright {
+    font-size: 0.73rem;
+    padding-bottom: 0.7rem;
+
+    @include tablet {
+      font-size: 0.9rem;
+    }
+  }
+}
