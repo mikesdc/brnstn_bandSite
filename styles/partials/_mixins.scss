@@ -46,8 +46,8 @@
   width: 100%;
   height: 20rem;
 
-  @include tablet {
-    height: 28rem;
+  @include media-size(700px) {
+    height: 30rem;
   }
 
   @include desktop() {

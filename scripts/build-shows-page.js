@@ -143,3 +143,16 @@ for (let i = 0; i < rowsList1.length; i++) {
     rowsList1[i].classList.add("active");
   });
 };
+
+
+const firstDateHeader = document.querySelector(".dateHeader");
+firstDateHeader.classList.add("show");
+
+const firstVenueHeader = document.querySelector(".venueHeader");
+firstVenueHeader.classList.add("show");
+
+const firstLocationHeader = document.querySelector(".locationHeader");
+firstLocationHeader.classList.add("show");
+
+const firstButtonHeader = document.querySelector(".buttonHeader");
+firstButtonHeader.classList.add("show");

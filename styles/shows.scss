@@ -37,6 +37,12 @@
       font-weight: 400;
       color: $white;
       z-index: 5;
+
+      @include media-size(700px) {
+        padding-left: 2rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
     }
 
     padding-left: 1rem;
@@ -50,7 +56,7 @@
       padding-bottom: 1rem;
     }
 
-    @include tablet {
+    @include media-size(700px) {
       padding-left: 2rem;
       font-size: 3.8rem;
     }
@@ -64,6 +70,12 @@
     margin: 0 auto;
     height: 7.5rem;
     width: 90%;
+
+    @include media-size(700px) {
+      width: 50%;
+      height: 9rem;
+      margin: 1rem 0 2rem 2rem;
+    }
   }
 }
 
@@ -72,7 +84,7 @@
 .shows {
   padding: 1rem 0;
 
-  @include tablet {
+  @include media-size(700px) {
     padding: 2.7rem;
   }
 
@@ -88,8 +100,9 @@
   padding-top: 1.5rem;
   padding-left: 1.5rem;
 
-  @include tablet {
+  @include media-size(700px) {
     font-size: 2.2rem;
+    padding: 1.5rem 0 1.5rem 0.5rem;
   }
 }
 
@@ -98,6 +111,11 @@
   flex-direction: column;
 
   .tourRow {
+    @include media-size(700px) {
+      display: flex;
+      flex-direction: row;
+    }
+
     &:hover {
       background-color: $alabaster;
     }
@@ -107,6 +125,18 @@
     background-color: $mercury;
   }
 
+  .dateCol,
+  .venueCol,
+  .locationCol,
+  .buttonCol {
+    @include media-size(700px) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 10rem;
+      margin: auto;
+    }
+  }
 
   .dateHeader,
   .venueHeader,
@@ -118,13 +148,34 @@
     color: $silver;
     padding-left: 1.5rem;
     padding-bottom: 0.5rem;
+
+    @include media-size(700px) {
+      padding: 0;
+      display: none;
+    }
   }
 
   .date,
   .venue,
-  .location {
+  .location,
+  .button {
     padding-left: 1.5rem;
     padding-bottom: 1rem;
+    @include media-size(700px) {
+      padding: 0;
+    }
+  }
+
+  .date,
+  .venue,
+  .location,
+  .button {
+    @include media-size(700px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 5rem;
+    }
   }
 
   .date {
@@ -134,17 +185,27 @@
 
   .dateHeader {
     padding-top: 1.2rem;
+
+    @include media-size(700px) {
+      padding: 0;
+    }
   }
 
   .venue,
   .location {
     font-size: 0.9rem;
   }
+
+  .show {
+    @include media-size(700px) {
+      display: initial;
+      padding: 0;
+    }
+  }
 }
 
 .buttonHeader {
   display: none;
-  
 }
 
 .button {
