@@ -13,6 +13,7 @@
     @include heroSize--shows;
     object-fit: cover;
     position: absolute;
+    object-position: 0 -8rem;
   }
 
   &__overlay {
@@ -28,6 +29,21 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+  }
+
+  &__container {
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__header {
@@ -42,6 +58,10 @@
         padding-left: 2rem;
         font-size: 1.5rem;
         font-weight: 600;
+      }
+
+      @include desktop {
+        padding: 0 0 2rem;
       }
     }
 
@@ -62,7 +82,7 @@
     }
 
     @include desktop {
-      padding-left: 7rem;
+      padding: 0;
     }
   }
 
@@ -75,6 +95,12 @@
       width: 50%;
       height: 9rem;
       margin: 1rem 0 2rem 2rem;
+    }
+
+    @include desktop {
+      width: 25%;
+      height: 7.5rem;
+      margin: 5rem 0 2rem 8rem;
     }
   }
 }
@@ -104,16 +130,31 @@
     font-size: 2.2rem;
     padding: 1.5rem 0 1.5rem 0.5rem;
   }
+
+  @include desktop {
+    margin-right: auto;
+    // position: absolute;
+    right: 50rem;
+  }
 }
 
 .shows {
   display: flex;
   flex-direction: column;
 
+  @include desktop {
+    position: relative;
+    align-items: flex-end;
+  }
+
   .tourRow {
     @include media-size(700px) {
       display: flex;
       flex-direction: row;
+    }
+    @include desktop {
+      position: relative;
+      top: -2rem;
     }
 
     &:hover {
@@ -135,6 +176,11 @@
       align-items: flex-start;
       width: 10rem;
       margin: auto;
+    }
+
+    @include desktop {
+      width: 9rem;
+      padding: 0 2rem;
     }
   }
 
@@ -230,4 +276,8 @@
 
 .tourRow {
   border-bottom: 0.15rem solid $mercury;
+}
+
+.buttonHeader {
+  display: none;
 }

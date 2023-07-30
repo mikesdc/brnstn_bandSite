@@ -276,6 +276,8 @@ html {
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
+  -o-object-position: 0 -8rem;
+     object-position: 0 -8rem;
 }
 @media only screen and (min-width: 700px) {
   .hero img {
@@ -322,6 +324,21 @@ html {
     height: 38rem;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .hero__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero__container {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .hero__header {
   padding-left: 1rem;
   font-size: 1.5rem;
@@ -344,6 +361,11 @@ html {
     font-weight: 600;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .hero__header--album {
+    padding: 0 0 2rem;
+  }
+}
 .hero__header:last-of-type {
   padding-bottom: 1rem;
 }
@@ -355,7 +377,7 @@ html {
 }
 @media only screen and (min-width: 1280px) {
   .hero__header {
-    padding-left: 7rem;
+    padding: 0;
   }
 }
 .hero__iframe {
@@ -368,6 +390,13 @@ html {
     width: 50%;
     height: 9rem;
     margin: 1rem 0 2rem 2rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero__iframe {
+    width: 25%;
+    height: 7.5rem;
+    margin: 5rem 0 2rem 8rem;
   }
 }
 
@@ -398,15 +427,33 @@ html {
     padding: 1.5rem 0 1.5rem 0.5rem;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .heading {
+    margin-right: auto;
+    right: 50rem;
+  }
+}
 
 .shows {
   display: flex;
   flex-direction: column;
 }
+@media only screen and (min-width: 1280px) {
+  .shows {
+    position: relative;
+    align-items: flex-end;
+  }
+}
 @media only screen and (min-width: 700px) {
   .shows .tourRow {
     display: flex;
     flex-direction: row;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shows .tourRow {
+    position: relative;
+    top: -2rem;
   }
 }
 .shows .tourRow:hover {
@@ -425,6 +472,15 @@ html {
     align-items: flex-start;
     width: 10rem;
     margin: auto;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shows .dateCol,
+  .shows .venueCol,
+  .shows .locationCol,
+  .shows .buttonCol {
+    width: 9rem;
+    padding: 0 2rem;
   }
 }
 .shows .dateHeader,
@@ -521,4 +577,8 @@ html {
 
 .tourRow {
   border-bottom: 0.15rem solid #e1e1e1;
+}
+
+.buttonHeader {
+  display: none;
 }/*# sourceMappingURL=shows.css.map */
