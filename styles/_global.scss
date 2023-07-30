@@ -41,6 +41,7 @@ html {
 //Nav Bar
 
 .nav {
+
   background-color: $darkgrey;
   display: flex;
   flex-direction: column;
@@ -78,7 +79,8 @@ html {
 
   &__site {
     display: flex;
-    justify-content: space-around;
+    box-sizing: border-box;
+    justify-content: center;
     width: 100%;
     font-size: 0.8rem;
     text-decoration: none;
@@ -96,6 +98,7 @@ html {
     }
 
     &-link {
+      box-sizing: border-box;
       width: 50vw;
       height: 1.5rem;
       display: flex;
@@ -137,6 +140,7 @@ html {
 .footer {
   background-color: $darkgrey;
   color: $white;
+  padding: 1rem;
 
   a,
   a:visited,

@@ -3,39 +3,52 @@
 
 @import "./global";
 
-
 //Hero
 
 .hero {
-  @include heroSize;
+  @include heroSize--shows;
   position: relative;
 
   img {
-    @include heroSize;
+    @include heroSize--shows;
     object-fit: cover;
     position: absolute;
   }
 
   &__overlay {
-    @include heroSize;
+    @include heroSize--shows;
     position: absolute;
     background-color: $darkgrey;
     opacity: 0.5;
   }
 
   &__title {
-    @include heroSize;
+    @include heroSize--shows;
     position: absolute;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   &__header {
+    &--album {
+      padding: 3rem 0 1.3rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: $white;
+      z-index: 5;
+    }
+
     padding-left: 1rem;
     font-size: 1.5rem;
     font-weight: 600;
     color: $white;
     z-index: 5;
+    padding-bottom: 0.2rem;
+
+    &:last-of-type {
+      padding-bottom: 1rem;
+    }
 
     @include tablet {
       padding-left: 2rem;
@@ -46,15 +59,18 @@
       padding-left: 7rem;
     }
   }
+
+  &__iframe {
+    margin: 0 auto;
+    height: 7.5rem;
+    width: 90%;
+  }
 }
 
 //Main
 
-.about,
-.gallery,
-.footer,
-.comments {
-  padding: 1rem;
+.shows {
+  padding: 1rem 0;
 
   @include tablet {
     padding: 2.7rem;
@@ -66,300 +82,91 @@
 }
 
 .heading {
-  color: $darkgrey;
+  color: $black;
   font-weight: 600;
   font-size: 1.5rem;
-  padding: 0.5rem 0 0;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
 
   @include tablet {
     font-size: 2.2rem;
   }
 }
 
-.about {
-  &__content {
-    @include tablet {
-      width: 37rem;
-      margin: auto;
-    }
+.shows {
+  display: flex;
+  flex-direction: column;
 
-    @include desktop {
-      width: 55rem;
-      margin: auto;
-    }
-  }
-
-  &__img {
-    width: 100%;
-    height: 50vw;
-    object-fit: cover;
-    object-position: bottom;
-    margin: 0.7rem 0;
-
-    @include tablet {
-      height: 17rem;
-      object-position: 0 -7rem;
-      margin: 2rem 0;
-    }
-
-    @include desktop {
-      height: 28rem;
-      object-position: 0 -7rem;
-      margin: 2rem 0;
-    }
-  }
-
-  &__review,
-  &__reviewer {
-    display: block;
-    padding: 0.17rem 0;
-    font-size: 0.9rem;
-    font-weight: 600;
-    line-height: 1.375rem;
-    color: $darkgrey;
-    line-height: 1.5;
-
-    @include tablet {
-      padding-bottom: 1rem;
-    }
-  }
-
-  &__review {
-    @include tablet {
-      font-size: 1.4rem;
-    }
-
-    @include tablet {
-      width: 42rem;
-      padding-bottom: 0.8rem;
-    }
-  }
-
-  &__reviewer {
-    @include desktop {
-      padding-bottom: 2rem;
-    }
-  }
-
-  &__band-name {
-    font-size: 0.9rem;
-    font-weight: 400;
-    color: $black;
-    padding: 1.5rem 0 0.5rem;
-
-    @include tablet {
-      font-size: 1.4rem;
-      font-weight: 600;
-    }
-  }
-
-  &__history-container {
-    @include tablet {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-
-  &__paragraph {
-    padding: 0.7rem 0;
-    font-size: 0.83rem;
-    line-height: 1.2rem;
-    color: $darkgrey;
-
-    @include tablet {
-      width: 17.5rem;
-      font-size: 0.9rem;
-      line-height: 1.4rem;
-    }
-    @include desktop {
-      padding: 1.5rem 0 0;
-      width: 26.5rem;
-      line-height: 1.4rem;
-    }
-  }
-}
-
-// Gallery
-
-.gallery {
-  background-color: $alabaster;
-
-  @include tablet {
-    padding-bottom: 2rem;
-  }
-
-  &__grid {
-    display: flex;
-    flex-direction: column;
-
-    @include mobile-to-tablet {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    @include tablet {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    @include desktop {
-      padding-top: 2rem;
-    }
-  }
-
-  img {
-    object-fit: cover;
-    width: 100%;
-    height: 60%;
-    padding: 0.7rem 0;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease-in-out;
-
+  .tourRow {
     &:hover {
-      filter: grayscale(0%);
-      transition: filter 0.3s ease-in-out;
-    }
-
-    @include mobile-to-tablet {
-      padding: 0;
-      width: 30vw;
-      flex-grow: 1;
-    }
-
-    @include tablet {
-      width: 27.5vw;
-    }
-
-    @include desktop {
-      width: 26vw;
-      padding: 0.6rem 0;
-    }
-
-    &:last-of-type {
-      padding: 0.7rem 0 0;
-
-      @include mobile-to-tablet {
-        padding: 0;
-      }
-    }
-  }
-}
-
-.grow {
-  @include mobile-to-tablet {
-    flex-basis: 30rem;
-  }
-}
-
-// Join the Conversation
-
-.comments {
-  &__content {
-    @include tablet {
-      width: 37rem;
-      margin: auto;
-    }
-
-    @include desktop {
-      width: 32rem;
-      background-color: palegreen;
-      margin: 2rem auto;
+      background-color: $alabaster;
     }
   }
 
-  &__img {
-    width: 100%;
-    height: 50vw;
-    object-fit: cover;
-    object-position: bottom;
-    margin: 0.7rem 0;
-
-    @include tablet {
-      height: 17rem;
-      object-position: 0 -7rem;
-      margin: 2rem 0;
-    }
-
-    @include desktop {
-      height: 28rem;
-      object-position: 0 -7rem;
-      margin: 2rem 0;
-    }
+  .active {
+    background-color: $mercury;
   }
 
-  &__review,
-  &__reviewer {
-    display: block;
-    padding: 0.17rem 0;
-    font-size: 0.9rem;
+
+  .dateHeader,
+  .venueHeader,
+  .locationHeader,
+  .buttonHeader {
+    text-transform: uppercase;
+    font-size: 0.7rem;
     font-weight: 600;
-    line-height: 1.375rem;
+    color: $silver;
+    padding-left: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .date,
+  .venue,
+  .location {
+    padding-left: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .date {
+    font-weight: 600;
     color: $darkgrey;
-    line-height: 1.5;
-
-    @include tablet {
-      padding-bottom: 1rem;
-    }
   }
 
-  &__review {
-    @include tablet {
-      font-size: 1.4rem;
-    }
-
-    @include tablet {
-      width: 42rem;
-      padding-bottom: 0.8rem;
-    }
+  .dateHeader {
+    padding-top: 1.2rem;
   }
 
-  &__reviewer {
-    @include desktop {
-      padding-bottom: 2rem;
-    }
-  }
-
-  &__band-name {
+  .venue,
+  .location {
     font-size: 0.9rem;
-    font-weight: 400;
-    color: $black;
-    padding: 1.5rem 0 0.5rem;
-
-    @include tablet {
-      font-size: 1.4rem;
-      font-weight: 600;
-    }
-  }
-
-  &__history-container {
-    @include tablet {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-
-  &__paragraph {
-    padding: 0.7rem 0;
-    font-size: 0.83rem;
-    line-height: 1.2rem;
-    color: $darkgrey;
-
-    @include tablet {
-      width: 17.5rem;
-      font-size: 0.9rem;
-      line-height: 1.4rem;
-    }
-    @include desktop {
-      padding: 1.5rem 0 0;
-      width: 26.5rem;
-      line-height: 1.4rem;
-    }
   }
 }
 
+.buttonHeader {
+  display: none;
+  
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 1rem;
+  margin: auto;
+
+  button {
+    width: 87%;
+    height: 2.5rem;
+    color: $white;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: $darkgrey;
+    outline: none;
+    border: 0.01rem solid $black;
+    border-radius: 0.25rem;
+  }
+}
+
+.tourRow {
+  border-bottom: 0.15rem solid $mercury;
+}

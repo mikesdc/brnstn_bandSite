@@ -71,7 +71,8 @@ html {
 }
 .nav__site {
   display: flex;
-  justify-content: space-around;
+  box-sizing: border-box;
+  justify-content: center;
   width: 100%;
   font-size: 0.8rem;
   text-decoration: none;
@@ -91,6 +92,7 @@ html {
   }
 }
 .nav__site-link {
+  box-sizing: border-box;
   width: 50vw;
   height: 1.5rem;
   display: flex;
@@ -131,6 +133,7 @@ html {
 .footer {
   background-color: #323232;
   color: #fff;
+  padding: 1rem;
 }
 .footer a,
 .footer a:visited,
@@ -254,7 +257,7 @@ html {
 
 .hero {
   width: 100%;
-  height: 11.5rem;
+  height: 20rem;
   position: relative;
 }
 @media only screen and (min-width: 768px) {
@@ -269,7 +272,7 @@ html {
 }
 .hero img {
   width: 100%;
-  height: 11.5rem;
+  height: 20rem;
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
@@ -286,7 +289,7 @@ html {
 }
 .hero__overlay {
   width: 100%;
-  height: 11.5rem;
+  height: 20rem;
   position: absolute;
   background-color: #323232;
   opacity: 0.5;
@@ -303,10 +306,11 @@ html {
 }
 .hero__title {
   width: 100%;
-  height: 11.5rem;
+  height: 20rem;
   position: absolute;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 @media only screen and (min-width: 768px) {
   .hero__title {
@@ -324,6 +328,17 @@ html {
   font-weight: 600;
   color: #fff;
   z-index: 5;
+  padding-bottom: 0.2rem;
+}
+.hero__header--album {
+  padding: 3rem 0 1.3rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #fff;
+  z-index: 5;
+}
+.hero__header:last-of-type {
+  padding-bottom: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .hero__header {
@@ -336,35 +351,32 @@ html {
     padding-left: 7rem;
   }
 }
+.hero__iframe {
+  margin: 0 auto;
+  height: 7.5rem;
+  width: 90%;
+}
 
-.about,
-.gallery,
-.footer,
-.comments {
-  padding: 1rem;
+.shows {
+  padding: 1rem 0;
 }
 @media only screen and (min-width: 768px) {
-  .about,
-  .gallery,
-  .footer,
-  .comments {
+  .shows {
     padding: 2.7rem;
   }
 }
 @media only screen and (min-width: 1280px) {
-  .about,
-  .gallery,
-  .footer,
-  .comments {
+  .shows {
     padding: 3rem 7rem;
   }
 }
 
 .heading {
-  color: #323232;
+  color: #000;
   font-weight: 600;
   font-size: 1.5rem;
-  padding: 0.5rem 0 0;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
 }
 @media only screen and (min-width: 768px) {
   .heading {
@@ -372,296 +384,68 @@ html {
   }
 }
 
-@media only screen and (min-width: 768px) {
-  .about__content {
-    width: 37rem;
-    margin: auto;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .about__content {
-    width: 55rem;
-    margin: auto;
-  }
-}
-.about__img {
-  width: 100%;
-  height: 50vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: bottom;
-     object-position: bottom;
-  margin: 0.7rem 0;
-}
-@media only screen and (min-width: 768px) {
-  .about__img {
-    height: 17rem;
-    -o-object-position: 0 -7rem;
-       object-position: 0 -7rem;
-    margin: 2rem 0;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .about__img {
-    height: 28rem;
-    -o-object-position: 0 -7rem;
-       object-position: 0 -7rem;
-    margin: 2rem 0;
-  }
-}
-.about__review, .about__reviewer {
-  display: block;
-  padding: 0.17rem 0;
-  font-size: 0.9rem;
-  font-weight: 600;
-  line-height: 1.375rem;
-  color: #323232;
-  line-height: 1.5;
-}
-@media only screen and (min-width: 768px) {
-  .about__review, .about__reviewer {
-    padding-bottom: 1rem;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .about__review {
-    font-size: 1.4rem;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .about__review {
-    width: 42rem;
-    padding-bottom: 0.8rem;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .about__reviewer {
-    padding-bottom: 2rem;
-  }
-}
-.about__band-name {
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: #000;
-  padding: 1.5rem 0 0.5rem;
-}
-@media only screen and (min-width: 768px) {
-  .about__band-name {
-    font-size: 1.4rem;
-    font-weight: 600;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .about__history-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-.about__paragraph {
-  padding: 0.7rem 0;
-  font-size: 0.83rem;
-  line-height: 1.2rem;
-  color: #323232;
-}
-@media only screen and (min-width: 768px) {
-  .about__paragraph {
-    width: 17.5rem;
-    font-size: 0.9rem;
-    line-height: 1.4rem;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .about__paragraph {
-    padding: 1.5rem 0 0;
-    width: 26.5rem;
-    line-height: 1.4rem;
-  }
-}
-
-.gallery {
-  background-color: #fafafa;
-}
-@media only screen and (min-width: 768px) {
-  .gallery {
-    padding-bottom: 2rem;
-  }
-}
-.gallery__grid {
+.shows {
   display: flex;
   flex-direction: column;
 }
-@media only screen and (min-width: 500px) and (max-width: 767px) {
-  .gallery__grid {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
+.shows .tourRow:hover {
+  background-color: #fafafa;
 }
-@media only screen and (min-width: 768px) {
-  .gallery__grid {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+.shows .active {
+  background-color: #e1e1e1;
 }
-@media only screen and (min-width: 1280px) {
-  .gallery__grid {
-    padding-top: 2rem;
-  }
-}
-.gallery img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 60%;
-  padding: 0.7rem 0;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease-in-out;
-}
-.gallery img:hover {
-  filter: grayscale(0%);
-  transition: filter 0.3s ease-in-out;
-}
-@media only screen and (min-width: 500px) and (max-width: 767px) {
-  .gallery img {
-    padding: 0;
-    width: 30vw;
-    flex-grow: 1;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .gallery img {
-    width: 27.5vw;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .gallery img {
-    width: 26vw;
-    padding: 0.6rem 0;
-  }
-}
-.gallery img:last-of-type {
-  padding: 0.7rem 0 0;
-}
-@media only screen and (min-width: 500px) and (max-width: 767px) {
-  .gallery img:last-of-type {
-    padding: 0;
-  }
-}
-
-@media only screen and (min-width: 500px) and (max-width: 767px) {
-  .grow {
-    flex-basis: 30rem;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .comments__content {
-    width: 37rem;
-    margin: auto;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .comments__content {
-    width: 32rem;
-    background-color: palegreen;
-    margin: 2rem auto;
-  }
-}
-.comments__img {
-  width: 100%;
-  height: 50vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: bottom;
-     object-position: bottom;
-  margin: 0.7rem 0;
-}
-@media only screen and (min-width: 768px) {
-  .comments__img {
-    height: 17rem;
-    -o-object-position: 0 -7rem;
-       object-position: 0 -7rem;
-    margin: 2rem 0;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .comments__img {
-    height: 28rem;
-    -o-object-position: 0 -7rem;
-       object-position: 0 -7rem;
-    margin: 2rem 0;
-  }
-}
-.comments__review, .comments__reviewer {
-  display: block;
-  padding: 0.17rem 0;
-  font-size: 0.9rem;
+.shows .dateHeader,
+.shows .venueHeader,
+.shows .locationHeader,
+.shows .buttonHeader {
+  text-transform: uppercase;
+  font-size: 0.7rem;
   font-weight: 600;
-  line-height: 1.375rem;
+  color: #afafaf;
+  padding-left: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+.shows .date,
+.shows .venue,
+.shows .location {
+  padding-left: 1.5rem;
+  padding-bottom: 1rem;
+}
+.shows .date {
+  font-weight: 600;
   color: #323232;
-  line-height: 1.5;
 }
-@media only screen and (min-width: 768px) {
-  .comments__review, .comments__reviewer {
-    padding-bottom: 1rem;
-  }
+.shows .dateHeader {
+  padding-top: 1.2rem;
 }
-@media only screen and (min-width: 768px) {
-  .comments__review {
-    font-size: 1.4rem;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .comments__review {
-    width: 42rem;
-    padding-bottom: 0.8rem;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .comments__reviewer {
-    padding-bottom: 2rem;
-  }
-}
-.comments__band-name {
+.shows .venue,
+.shows .location {
   font-size: 0.9rem;
-  font-weight: 400;
-  color: #000;
-  padding: 1.5rem 0 0.5rem;
 }
-@media only screen and (min-width: 768px) {
-  .comments__band-name {
-    font-size: 1.4rem;
-    font-weight: 600;
-  }
+
+.buttonHeader {
+  display: none;
 }
-@media only screen and (min-width: 768px) {
-  .comments__history-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+
+.button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 1rem;
+  margin: auto;
 }
-.comments__paragraph {
-  padding: 0.7rem 0;
-  font-size: 0.83rem;
-  line-height: 1.2rem;
-  color: #323232;
+.button button {
+  width: 87%;
+  height: 2.5rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #323232;
+  outline: none;
+  border: 0.01rem solid #000;
+  border-radius: 0.25rem;
 }
-@media only screen and (min-width: 768px) {
-  .comments__paragraph {
-    width: 17.5rem;
-    font-size: 0.9rem;
-    line-height: 1.4rem;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .comments__paragraph {
-    padding: 1.5rem 0 0;
-    width: 26.5rem;
-    line-height: 1.4rem;
-  }
+
+.tourRow {
+  border-bottom: 0.15rem solid #e1e1e1;
 }/*# sourceMappingURL=shows.css.map */

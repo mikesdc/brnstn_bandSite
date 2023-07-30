@@ -126,7 +126,8 @@ function formButtonHandler(event) {
 
   displayCommentsArray();
 
-  formButton.disabled = true;
+  //remove this next line if you want to create more comments than just one
+  // formButton.disabled = true;
 }
 
 formButton.addEventListener("click", formButtonHandler);

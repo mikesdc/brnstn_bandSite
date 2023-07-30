@@ -71,7 +71,8 @@ html {
 }
 .nav__site {
   display: flex;
-  justify-content: space-around;
+  box-sizing: border-box;
+  justify-content: center;
   width: 100%;
   font-size: 0.8rem;
   text-decoration: none;
@@ -91,6 +92,7 @@ html {
   }
 }
 .nav__site-link {
+  box-sizing: border-box;
   width: 50vw;
   height: 1.5rem;
   display: flex;
@@ -131,6 +133,7 @@ html {
 .footer {
   background-color: #323232;
   color: #fff;
+  padding: 1rem;
 }
 .footer a,
 .footer a:visited,
@@ -339,14 +342,12 @@ html {
 
 .about,
 .gallery,
-.footer,
 .comments {
   padding: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .about,
   .gallery,
-  .footer,
   .comments {
     padding: 2.7rem;
   }
@@ -354,7 +355,6 @@ html {
 @media only screen and (min-width: 1280px) {
   .about,
   .gallery,
-  .footer,
   .comments {
     padding: 3rem 7rem;
   }
@@ -430,7 +430,7 @@ html {
 }
 @media only screen and (min-width: 768px) {
   .about__review {
-    width: 42rem;
+    width: 100%;
     padding-bottom: 0.8rem;
   }
 }
@@ -590,8 +590,8 @@ html {
   margin-right: 1.2rem;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: -0.5rem;
-     object-position: -0.5rem;
+  -o-object-position: -0.2rem;
+     object-position: -0.2rem;
   border-radius: 50%;
 }
 .comments__form-content {
@@ -634,6 +634,9 @@ html {
 }
 .commentsField::placeholder {
   color: #000;
+}
+.commentsField:active {
+  border-color: #323232;
 }
 @media only screen and (min-width: 768px) {
   .commentsField {
