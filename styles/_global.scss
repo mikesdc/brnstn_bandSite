@@ -142,6 +142,14 @@ html {
   color: $white;
   padding: 1rem;
 
+  @include tablet {
+    padding: 2.7rem;
+  }
+
+  @include desktop {
+    padding: 3rem 7rem;
+  }
+
   a,
   a:visited,
   a:hover {
