@@ -25,9 +25,6 @@ let comments = [
 
 //compiling comments onto HTML
 
-const commentsContainer = document.querySelector(
-  ".comments__comments-container"
-);
 
 //function to clear all comments
 function clearCommentsContainer() {
@@ -35,6 +32,11 @@ function clearCommentsContainer() {
 }
 
 //function to generate a comment card element, and add comment contents
+const commentsContainer = document.querySelector(
+  ".comments__comments-container"
+);
+
+
 let displayComment = function (index) {
   const cardDiv = document.createElement("div");
   commentsContainer.append(cardDiv);
