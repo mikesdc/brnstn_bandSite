@@ -1,16 +1,31 @@
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: 600;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/fonts/AvenirNextLTPro.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/fonts/AvenirNextLTProDemi.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/fonts/AvenirNextLTProBold.ttf") format("truetype");
   font-weight: 700;
 }
 * {
@@ -469,6 +484,22 @@ html {
 .shows .tourRow:hover {
   background-color: #fafafa;
 }
+.shows .topRow {
+  display: none;
+}
+@media only screen and (min-width: 700px) {
+  .shows .topRow {
+    display: initial;
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shows .topRow {
+    position: relative;
+    top: -2rem;
+  }
+}
 .shows .active {
   background-color: #e1e1e1;
 }
@@ -579,6 +610,12 @@ html {
 .buttonHeader {
   display: none;
 }
+@media only screen and (min-width: 700px) {
+  .buttonHeader {
+    display: initial;
+    padding: 0;
+  }
+}
 
 .button {
   display: flex;
@@ -605,6 +642,10 @@ html {
 
 .tourRow {
   border-bottom: 0.15rem solid #e1e1e1;
+}
+
+.topRow {
+  border-bottom: 0.15rem solid #fff;
 }
 
 .buttonHeader {

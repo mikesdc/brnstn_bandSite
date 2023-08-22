@@ -162,6 +162,20 @@
     }
   }
 
+  .topRow {
+    display: none;
+
+    @include media-size(700px) {
+      display: initial;
+      display: flex;
+      flex-direction: row;
+    }
+    @include desktop {
+      position: relative;
+      top: -2rem;
+    }
+  }
+
   .active {
     background-color: $mercury;
   }
@@ -266,6 +280,10 @@
 
 .buttonHeader {
   display: none;
+  @include media-size(700px) {
+    display: initial;
+    padding: 0;
+  }
 }
 
 .button {
@@ -295,6 +313,10 @@
 
 .tourRow {
   border-bottom: 0.15rem solid $mercury;
+}
+
+.topRow {
+  border-bottom: 0.15rem solid $white;
 }
 
 .buttonHeader {

@@ -41,6 +41,8 @@ let shows = [
 
 const showsContainer = document.querySelector(".shows");
 
+// clearing current shows list
+
 showsContainer.innerHTML = "";
 
 const showsHeader = document.createElement("h2");
@@ -115,6 +117,50 @@ let insertShowsRow = function (index) {
   buttonElement.innerText = "BUY TICKETS";
 };
 
+// create column headers (tablet and desktop views)
+
+let insertTopRow = function () {
+  const topRow = document.createElement("div");
+  showsContainer.append(topRow);
+  topRow.className = "topRow";
+
+  const dateCol = document.createElement("div");
+  topRow.append(dateCol);
+  dateCol.className = "dateCol";
+
+  const dateHeader = document.createElement("div");
+  dateCol.append(dateHeader);
+  dateHeader.className = "dateHeader show";
+  dateHeader.innerText = "date";
+
+  const venueCol = document.createElement("div");
+  topRow.append(venueCol);
+  venueCol.className = "venueCol";
+
+  const venueHeader = document.createElement("div");
+  venueCol.append(venueHeader);
+  venueHeader.className = "venueHeader show";
+  venueHeader.innerText = "venue";
+
+  const locationCol = document.createElement("div");
+  topRow.append(locationCol);
+  locationCol.className = "locationCol";
+
+  const locationHeader = document.createElement("div");
+  locationCol.append(locationHeader);
+  locationHeader.className = "locationHeader show";
+  locationHeader.innerText = "location";
+
+  const buttonCol = document.createElement("div");
+  topRow.append(buttonCol);
+  buttonCol.className = "buttonCol";
+
+  const buttonHeader = document.createElement("div");
+  buttonCol.append(buttonHeader);
+  buttonHeader.className = "buttonHeader";
+  buttonHeader.innerText = "empty";
+};
+
 // replicate cards for each array object
 
 function displayShowsArray() {
@@ -123,6 +169,7 @@ function displayShowsArray() {
   }
 }
 
+insertTopRow();
 displayShowsArray();
 
 // event listener for selected row
@@ -134,14 +181,3 @@ for (let i = 0; i < rowsList1.length; i++) {
     rowsList1[i].classList.add("active");
   });
 }
-
-// show top column headers for tablet and desktop view
-
-const firstDateHeader = document.querySelector(".dateHeader");
-firstDateHeader.classList.add("show");
-
-const firstVenueHeader = document.querySelector(".venueHeader");
-firstVenueHeader.classList.add("show");
-
-const firstLocationHeader = document.querySelector(".locationHeader");
-firstLocationHeader.classList.add("show");
