@@ -129,6 +129,7 @@
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
+  transition: 0.2s;
 
   @include media-size(700px) {
     padding: 2.7rem;
@@ -152,6 +153,7 @@
 
     &:hover {
       background-color: $alabaster;
+      transition: 0.2s;
     }
   }
 
@@ -279,18 +281,22 @@
     outline: none;
     border: 0.01rem solid $black;
     border-radius: 0.25rem;
+    transition: 0.2s;
 
     &:hover {
       background-color: $black;
       cursor: pointer;
+      transition: 0.2s;
     }
   }
 }
 
 .tour-row {
   border-bottom: 0.15rem solid $mercury;
+  transition: 0.2s;
 
   &:hover {
     cursor: pointer;
+    transition: 0.2s;
   }
 }

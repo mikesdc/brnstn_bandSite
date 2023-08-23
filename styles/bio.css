@@ -114,6 +114,7 @@ html {
   display: flex;
   justify-content: center;
   border-bottom: 0.2rem solid #323232;
+  transition: 0.2s;
 }
 @media only screen and (min-width: 1280px) {
   .nav__site-link {
@@ -140,6 +141,7 @@ html {
   border-bottom: 0.2rem solid #fff;
   font-weight: 400;
   color: #fff;
+  transition: 0.2s;
 }
 @media only screen and (min-width: 1280px) {
   .nav__site-link:hover {
@@ -155,6 +157,7 @@ html {
   border-bottom: 0.2rem solid #fff;
   font-weight: 600;
   color: #fff;
+  transition: 0.2s;
 }
 @media only screen and (min-width: 1280px) {
   .nav__site-linkactive:hover {
@@ -286,6 +289,13 @@ html {
 }
 .footer__card-address, .footer__card-email {
   font-weight: 400;
+}
+.footer__card-email {
+  transition: 0.2s;
+}
+.footer__card-email:hover {
+  transition: 0.2s;
+  text-shadow: 0 0rem 0.7rem black;
 }
 .footer__copyright {
   font-size: 0.73rem;

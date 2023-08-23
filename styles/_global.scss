@@ -88,6 +88,7 @@ html {
       display: flex;
       justify-content: center;
       border-bottom: 0.2rem solid $darkgrey;
+      transition: 0.2s;
 
       @include desktop {
         border-bottom: 0.2rem solid $darkgrey;
@@ -110,6 +111,7 @@ html {
         border-bottom: 0.2rem solid $white;
         font-weight: 400;
         color: $white;
+        transition: 0.2s;
 
         @include desktop {
           border-bottom: 0.2rem solid $white;
@@ -125,6 +127,7 @@ html {
           border-bottom: 0.2rem solid $white;
           font-weight: 600;
           color: $white;
+          transition: 0.2s;
 
           @include desktop {
             border-bottom: 0.2rem solid $white;
@@ -135,146 +138,155 @@ html {
   }
 }
 
-  // Footer
+// Footer
 
-  .footer {
-    background-color: $darkgrey;
+.footer {
+  background-color: $darkgrey;
+  color: $white;
+  padding: 1rem;
+
+  @include tablet {
+    padding: 2.7rem;
+  }
+
+  @include desktop {
+    padding: 3rem 7rem;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    text-decoration: none;
     color: $white;
-    padding: 1rem;
+  }
 
+  &__header {
     @include tablet {
-      padding: 2.7rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      gap: 2rem;
+
+      div:last-child {
+        margin-left: auto;
+      }
     }
 
-    @include desktop {
-      padding: 3rem 7rem;
-    }
+    &-text {
+      font-size: 1.7rem;
+      font-weight: 600;
+      padding: 1.3rem 0;
 
-    a,
-    a:visited,
-    a:hover {
-      text-decoration: none;
-      color: $white;
-    }
-
-    &__header {
       @include tablet {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        padding: 0;
+        font-size: 2.3rem;
+      }
+    }
+
+    &-social {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 9rem;
+      padding: 0 0 2rem;
+
+      @include tablet {
+        padding: 0;
         align-items: center;
-        margin-bottom: 2rem;
-        gap: 2rem;
-
-        div:last-child {
-          margin-left: auto;
-        }
       }
 
-      &-text {
-        font-size: 1.7rem;
-        font-weight: 600;
-        padding: 1.3rem 0;
+      img {
+        object-fit: contain;
+        width: 1.8rem;
+        height: 1.8rem;
 
         @include tablet {
-          padding: 0;
-          font-size: 2.3rem;
+          width: 1.5rem;
+          height: 1.5rem;
         }
-      }
-
-      &-social {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 9rem;
-        padding: 0 0 2rem;
-
-        @include tablet {
-          padding: 0;
-          align-items: center;
-        }
-
-        img {
-          object-fit: contain;
-          width: 1.8rem;
-          height: 1.8rem;
-
-          @include tablet {
-            width: 1.5rem;
-            height: 1.5rem;
-          }
-        }
-      }
-    }
-
-    &__bandsite {
-      padding: 3rem 0 1rem;
-
-      &-logo {
-        width: 7.5rem;
-      }
-
-      &-tablet {
-        display: none;
-        @include tablet {
-          display: flex;
-          flex-direction: column-reverse;
-          padding: 0;
-        }
-      }
-
-      &-mobile {
-        @include tablet {
-          display: none;
-        }
-      }
-    }
-
-    &__card {
-      line-height: 1.4rem;
-      font-size: 0.9rem;
-
-      &-container {
-        display: flex;
-        flex-direction: column;
-
-        @include tablet {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          padding-bottom: 3rem;
-        }
-
-        @include desktop {
-          justify-content: flex-start;
-          gap: 5rem;
-          padding-bottom: 2rem;
-        }
-      }
-
-      &-name,
-      &-address,
-      &-email {
-        padding-bottom: 1.2rem;
-      }
-
-      &-name {
-        font-weight: 600;
-        padding-top: 0.5rem;
-      }
-
-      &-address,
-      &-email {
-        font-weight: 400;
-      }
-    }
-    &__copyright {
-      font-size: 0.73rem;
-      padding-bottom: 0.7rem;
-
-      @include tablet {
-        font-size: 0.9rem;
       }
     }
   }
+
+  &__bandsite {
+    padding: 3rem 0 1rem;
+
+    &-logo {
+      width: 7.5rem;
+    }
+
+    &-tablet {
+      display: none;
+      @include tablet {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 0;
+      }
+    }
+
+    &-mobile {
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__card {
+    line-height: 1.4rem;
+    font-size: 0.9rem;
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+
+      @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 3rem;
+      }
+
+      @include desktop {
+        justify-content: flex-start;
+        gap: 5rem;
+        padding-bottom: 2rem;
+      }
+    }
+
+    &-name,
+    &-address,
+    &-email {
+      padding-bottom: 1.2rem;
+    }
+
+    &-name {
+      font-weight: 600;
+      padding-top: 0.5rem;
+    }
+
+    &-address,
+    &-email {
+      font-weight: 400;
+    }
+
+    &-email {
+      transition: 0.2s;
+
+      &:hover {
+        transition: 0.2s;
+        text-shadow: 0 0rem 0.7rem black;
+      }
+    }
+  }
+  &__copyright {
+    font-size: 0.73rem;
+    padding-bottom: 0.7rem;
+
+    @include tablet {
+      font-size: 0.9rem;
+    }
+  }
+}
