@@ -344,7 +344,6 @@
       min-height: 3rem;
     }
 
-
     &--comment {
       height: 7rem;
     }
@@ -364,6 +363,7 @@
 
     &:hover {
       background-color: $black;
+      cursor: pointer;
     }
 
     @include media-size(500px) {

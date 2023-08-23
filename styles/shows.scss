@@ -313,6 +313,10 @@
 
 .tourRow {
   border-bottom: 0.15rem solid $mercury;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .topRow {

@@ -1,31 +1,31 @@
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: 600;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: 700;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextLTPro.ttf") format("truetype");
+  src: url("../assets/fonts/AvenirNextLTPro.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextLTProDemi.ttf") format("truetype");
+  src: url("../assets/fonts/AvenirNextLTProDemi.ttf") format("truetype");
   font-weight: 600;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextLTProBold.ttf") format("truetype");
+  src: url("../assets/fonts/AvenirNextLTProBold.ttf") format("truetype");
   font-weight: 700;
 }
 * {
@@ -107,6 +107,7 @@ html {
   }
 }
 .nav__site-link {
+  color: #e1e1e1;
   box-sizing: border-box;
   width: 50vw;
   height: 1.5rem;
@@ -135,13 +136,29 @@ html {
     height: 4.8rem;
   }
 }
-.nav__site-link:hover, .nav__site-linkactive {
+.nav__site-link:hover {
   border-bottom: 0.2rem solid #fff;
-  font-weight: 600;
+  font-weight: 400;
+  color: #fff;
 }
 @media only screen and (min-width: 1280px) {
-  .nav__site-link:hover, .nav__site-linkactive {
+  .nav__site-link:hover {
     border-bottom: 0.25rem solid #fff;
+  }
+}
+.nav__site-linkactive {
+  border-bottom: 0.2rem solid #fff;
+  font-weight: 600;
+  color: #fff;
+}
+.nav__site-linkactive:hover {
+  border-bottom: 0.2rem solid #fff;
+  font-weight: 600;
+  color: #fff;
+}
+@media only screen and (min-width: 1280px) {
+  .nav__site-linkactive:hover {
+    border-bottom: 0.2rem solid #fff;
   }
 }
 
@@ -642,6 +659,9 @@ html {
 
 .tourRow {
   border-bottom: 0.15rem solid #e1e1e1;
+}
+.tourRow:hover {
+  cursor: pointer;
 }
 
 .topRow {
