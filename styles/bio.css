@@ -117,7 +117,7 @@ html {
 }
 @media only screen and (min-width: 1280px) {
   .nav__site-link {
-    border-bottom: 0.25rem solid #323232;
+    border-bottom: 0.2rem solid #323232;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -143,7 +143,7 @@ html {
 }
 @media only screen and (min-width: 1280px) {
   .nav__site-link:hover {
-    border-bottom: 0.25rem solid #fff;
+    border-bottom: 0.2rem solid #fff;
   }
 }
 .nav__site-linkactive {
@@ -648,7 +648,7 @@ html {
   padding-bottom: 0.125rem;
 }
 @media only screen and (min-width: 500px) {
-  .comments__form-buttonContainer {
+  .comments__form-button-container {
     margin-left: auto;
   }
 }
@@ -658,7 +658,7 @@ html {
     flex-direction: column;
   }
 }
-.commentsField {
+.comments-field {
   box-sizing: border-box;
   display: block;
   width: 100%;
@@ -671,21 +671,21 @@ html {
   color: #000;
   resize: none;
 }
-.commentsField::-moz-placeholder {
+.comments-field::-moz-placeholder {
   color: #000;
 }
-.commentsField::placeholder {
+.comments-field::placeholder {
   color: #000;
 }
-.commentsField:focus {
+.comments-field:focus {
   border-color: #323232;
 }
 @media only screen and (min-width: 768px) {
-  .commentsField {
+  .comments-field {
     min-height: 3rem;
   }
 }
-.commentsField--comment {
+.comments-field--comment {
   height: 7rem;
 }
 .comments__button {

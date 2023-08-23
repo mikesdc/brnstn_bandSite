@@ -6,25 +6,24 @@
 //Hero
 
 .hero {
-  @include heroSize--shows;
+  @include hero-size--shows;
   position: relative;
 
   img {
-    @include heroSize--shows;
+    @include hero-size--shows;
     object-fit: cover;
     position: absolute;
-    object-position: 0 -8rem;
   }
 
   &__overlay {
-    @include heroSize--shows;
+    @include hero-size--shows;
     position: absolute;
     background-color: $darkgrey;
     opacity: 0.5;
   }
 
   &__title {
-    @include heroSize--shows;
+    @include hero-size--shows;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -107,18 +106,6 @@
 
 //Main
 
-.shows {
-  padding: 1rem 0;
-
-  @include media-size(700px) {
-    padding: 2.7rem;
-  }
-
-  @include desktop {
-    padding: 3rem 7rem;
-  }
-}
-
 .heading {
   color: $black;
   font-weight: 600;
@@ -139,15 +126,21 @@
 }
 
 .shows {
+  padding: 1rem 0;
   display: flex;
   flex-direction: column;
 
+  @include media-size(700px) {
+    padding: 2.7rem;
+  }
+
   @include desktop {
+    padding: 3rem 7rem;
     position: relative;
     align-items: flex-end;
   }
 
-  .tourRow {
+  .tour-row {
     @include media-size(700px) {
       display: flex;
       flex-direction: row;
@@ -162,7 +155,7 @@
     }
   }
 
-  .topRow {
+  .top-row {
     display: none;
 
     @include media-size(700px) {
@@ -180,10 +173,10 @@
     background-color: $mercury;
   }
 
-  .dateCol,
-  .venueCol,
-  .locationCol,
-  .buttonCol {
+  .date-column,
+  .venue-column,
+  .location-column,
+  .button-column {
     @include media-size(700px) {
       display: flex;
       flex-direction: column;
@@ -198,9 +191,9 @@
     }
   }
 
-  .dateHeader,
-  .venueHeader,
-  .locationHeader {
+  .date-header,
+  .venue-header,
+  .location-header {
     padding-left: 1.5rem;
     text-transform: uppercase;
     font-size: 0.7rem;
@@ -214,17 +207,16 @@
     }
   }
 
-  .buttonHeader {
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: $silver;
-    padding-bottom: 0.5rem;
+  .date-header {
+    padding-top: 1.2rem;
 
     @include media-size(700px) {
       padding: 0;
-      display: none;
     }
+  }
+
+  .button-header {
+    display: none;
   }
 
   .date,
@@ -241,6 +233,16 @@
     }
   }
 
+  .date {
+    font-weight: 600;
+    color: $darkgrey;
+  }
+
+  .venue,
+  .location {
+    font-size: 0.9rem;
+  }
+
   .button {
     padding-bottom: 1rem;
     @include media-size(700px) {
@@ -252,37 +254,11 @@
     }
   }
 
-  .date {
-    font-weight: 600;
-    color: $darkgrey;
-  }
-
-  .dateHeader {
-    padding-top: 1.2rem;
-
-    @include media-size(700px) {
-      padding: 0;
-    }
-  }
-
-  .venue,
-  .location {
-    font-size: 0.9rem;
-  }
-
   .show {
     @include media-size(700px) {
       display: initial;
       padding: 0;
     }
-  }
-}
-
-.buttonHeader {
-  display: none;
-  @include media-size(700px) {
-    display: initial;
-    padding: 0;
   }
 }
 
@@ -311,18 +287,10 @@
   }
 }
 
-.tourRow {
+.tour-row {
   border-bottom: 0.15rem solid $mercury;
 
   &:hover {
     cursor: pointer;
   }
-}
-
-.topRow {
-  border-bottom: 0.15rem solid $white;
-}
-
-.buttonHeader {
-  display: none;
 }

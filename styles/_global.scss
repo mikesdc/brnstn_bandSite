@@ -90,7 +90,7 @@ html {
       border-bottom: 0.2rem solid $darkgrey;
 
       @include desktop {
-        border-bottom: 0.25rem solid $darkgrey;
+        border-bottom: 0.2rem solid $darkgrey;
       }
 
       @include tablet {
@@ -112,7 +112,7 @@ html {
         color: $white;
 
         @include desktop {
-          border-bottom: 0.25rem solid $white;
+          border-bottom: 0.2rem solid $white;
         }
       }
 

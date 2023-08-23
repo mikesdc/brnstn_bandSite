@@ -6,24 +6,24 @@
 //Hero
 
 .hero {
-  @include heroSize;
+  @include hero-size;
   position: relative;
 
   img {
-    @include heroSize;
+    @include hero-size;
     object-fit: cover;
     position: absolute;
   }
 
   &__overlay {
-    @include heroSize;
+    @include hero-size;
     position: absolute;
     background-color: $darkgrey;
     opacity: 0.5;
   }
 
   &__title {
-    @include heroSize;
+    @include hero-size;
     position: absolute;
     display: flex;
     align-items: center;
@@ -305,7 +305,7 @@
       }
     }
 
-    &-buttonContainer {
+    &-button-container {
       @include media-size(500px) {
         margin-left: auto;
       }
@@ -319,7 +319,7 @@
     }
   }
 
-  &Field {
+  &-field {
     box-sizing: border-box;
     display: block;
     width: 100%;

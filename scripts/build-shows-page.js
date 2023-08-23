@@ -55,15 +55,15 @@ showsHeader.innerText = "Shows";
 let insertShowsRow = function (index) {
   const tourRow = document.createElement("div");
   showsContainer.append(tourRow);
-  tourRow.className = "tourRow";
+  tourRow.className = "tour-row";
 
   const dateCol = document.createElement("div");
   tourRow.append(dateCol);
-  dateCol.className = "dateCol";
+  dateCol.className = "date-column";
 
   const dateHeader = document.createElement("div");
   dateCol.append(dateHeader);
-  dateHeader.className = "dateHeader";
+  dateHeader.className = "date-header";
   dateHeader.innerText = "date";
 
   const date = document.createElement("div");
@@ -73,11 +73,11 @@ let insertShowsRow = function (index) {
 
   const venueCol = document.createElement("div");
   tourRow.append(venueCol);
-  venueCol.className = "venueCol";
+  venueCol.className = "venue-column";
 
   const venueHeader = document.createElement("div");
   venueCol.append(venueHeader);
-  venueHeader.className = "venueHeader";
+  venueHeader.className = "venue-header";
   venueHeader.innerText = "venue";
 
   const venue = document.createElement("div");
@@ -87,11 +87,11 @@ let insertShowsRow = function (index) {
 
   const locationCol = document.createElement("div");
   tourRow.append(locationCol);
-  locationCol.className = "locationCol";
+  locationCol.className = "location-column";
 
   const locationHeader = document.createElement("div");
   locationCol.append(locationHeader);
-  locationHeader.className = "locationHeader";
+  locationHeader.className = "location-header";
   locationHeader.innerText = "location";
 
   const locationProperty = document.createElement("div");
@@ -101,11 +101,11 @@ let insertShowsRow = function (index) {
 
   const buttonCol = document.createElement("div");
   tourRow.append(buttonCol);
-  buttonCol.className = "buttonCol";
+  buttonCol.className = "button-column";
 
   const buttonHeader = document.createElement("div");
   buttonCol.append(buttonHeader);
-  buttonHeader.className = "buttonHeader";
+  buttonHeader.className = "button-header";
   buttonHeader.innerText = "empty";
 
   const button = document.createElement("div");
@@ -122,42 +122,42 @@ let insertShowsRow = function (index) {
 let insertTopRow = function () {
   const topRow = document.createElement("div");
   showsContainer.append(topRow);
-  topRow.className = "topRow";
+  topRow.className = "top-row";
 
   const dateCol = document.createElement("div");
   topRow.append(dateCol);
-  dateCol.className = "dateCol";
+  dateCol.className = "date-column";
 
   const dateHeader = document.createElement("div");
   dateCol.append(dateHeader);
-  dateHeader.className = "dateHeader show";
+  dateHeader.className = "date-header show";
   dateHeader.innerText = "date";
 
   const venueCol = document.createElement("div");
   topRow.append(venueCol);
-  venueCol.className = "venueCol";
+  venueCol.className = "venue-column";
 
   const venueHeader = document.createElement("div");
   venueCol.append(venueHeader);
-  venueHeader.className = "venueHeader show";
+  venueHeader.className = "venue-header show";
   venueHeader.innerText = "venue";
 
   const locationCol = document.createElement("div");
   topRow.append(locationCol);
-  locationCol.className = "locationCol";
+  locationCol.className = "location-column";
 
   const locationHeader = document.createElement("div");
   locationCol.append(locationHeader);
-  locationHeader.className = "locationHeader show";
+  locationHeader.className = "location-header show";
   locationHeader.innerText = "location";
 
   const buttonCol = document.createElement("div");
   topRow.append(buttonCol);
-  buttonCol.className = "buttonCol";
+  buttonCol.className = "button-column";
 
   const buttonHeader = document.createElement("div");
   buttonCol.append(buttonHeader);
-  buttonHeader.className = "buttonHeader";
+  buttonHeader.className = "button-header";
   buttonHeader.innerText = "empty";
 };
 
@@ -174,7 +174,7 @@ displayShowsArray();
 
 // event listener for selected row
 
-const rowsList1 = document.querySelectorAll(".tourRow");
+const rowsList1 = document.querySelectorAll(".tour-row");
 for (let i = 0; i < rowsList1.length; i++) {
   rowsList1[i].addEventListener("click", function () {
     rowsList1.forEach((element) => element.classList.remove("active"));

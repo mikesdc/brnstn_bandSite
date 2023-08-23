@@ -123,7 +123,7 @@ function formButtonHandler(event) {
 
   comments.unshift(newComment);
 
-  const allInputs = document.querySelectorAll(".commentsField");
+  const allInputs = document.querySelectorAll(".comments-field");
   allInputs.forEach((instance) => (instance.value = ""));
 
   displayCommentsArray();
