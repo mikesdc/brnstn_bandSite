@@ -166,3 +166,6 @@ commentField.addEventListener("click", () => {
   commentField.classList.remove("error");
   commentField.setAttribute("placeholder", "Add a new comment");
 });
+
+
+//starting responsive date
