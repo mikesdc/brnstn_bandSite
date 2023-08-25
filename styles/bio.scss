@@ -344,6 +344,9 @@
       min-height: 3rem;
     }
 
+    &--name {
+    }
+
     &--comment {
       height: 7rem;
     }
@@ -420,4 +423,9 @@
       }
     }
   }
+}
+
+
+.error {
+  border-color: $red;
 }

@@ -25,7 +25,6 @@ let comments = [
 
 //compiling comments onto HTML
 
-
 //function to clear all comments
 function clearCommentsContainer() {
   commentsContainer.innerHTML = "";
@@ -35,7 +34,6 @@ function clearCommentsContainer() {
 const commentsContainer = document.querySelector(
   ".comments__comments-container"
 );
-
 
 let displayComment = function (index) {
   const cardDiv = document.createElement("div");
@@ -80,16 +78,14 @@ function displayCommentsArray() {
 
 displayCommentsArray();
 
-//adding new comment to array
+//Section for adding new comment to array
 
-//event listener for form
+//setting up functions for event listener
 
-let formButton = document.querySelector(".formButton");
-
-function formButtonHandler(event) {
-  event.preventDefault();
+let addCommentToArray = function () {
   const nameField = document.getElementById("nameField");
   let formNameValue = nameField.value;
+
   const commentField = document.getElementById("commentField");
   let formCommentValue = commentField.value;
 
@@ -122,28 +118,51 @@ function formButtonHandler(event) {
   };
 
   comments.unshift(newComment);
+};
 
-  const allInputs = document.querySelectorAll(".comments-field");
-  allInputs.forEach((instance) => (instance.value = ""));
+// Button Behaviour - including form validation
 
-  displayCommentsArray();
+function formButtonHandler(event) {
+  event.preventDefault();
 
-  //remove this next line if you want to create more comments than just one
-  // formButton.disabled = true;
+  //add error states when field is blank
+  if (!nameField.value) {
+    nameField.classList.add("error");
+    nameField.setAttribute("placeholder", "");
+  }
+
+  if (!commentField.value) {
+    commentField.classList.add("error");
+    commentField.setAttribute("placeholder", "");
+  }
+
+  //if both fields are filled, proceed with posting comment
+
+  if (nameField.value && commentField.value) {
+    addCommentToArray();
+    displayCommentsArray();
+
+    //clear form contents and any error states
+
+    const allInputs = document.querySelectorAll(".comments-field");
+    allInputs.forEach((instance) => (instance.value = ""));
+
+    nameField.classList.remove("error");
+    commentField.classList.remove("error");
+  }
 }
 
+const formButton = document.querySelector(".formButton");
 formButton.addEventListener("click", formButtonHandler);
 
-let monthTimestamp;
-if (month.toString() == 2) {
-  monthTimestamp = month.toString();
-} else {
-  monthTimestamp = `0${month}`;
-}
+//clear error states on click
 
-let dateTimestamp;
-if (date.toString() == 2) {
-  dateTimestamp = date.toString();
-} else {
-  dateTimestamp = `0${date}`;
-}
+nameField.addEventListener("click", () => {
+  nameField.classList.remove("error");
+  nameField.setAttribute("placeholder", "Enter your name");
+});
+
+commentField.addEventListener("click", () => {
+  commentField.classList.remove("error");
+  commentField.setAttribute("placeholder", "Add a new comment");
+});

@@ -758,4 +758,8 @@ html {
 }
 .comments__comment-header-date {
   color: #afafaf;
+}
+
+.error {
+  border-color: #d22d2d;
 }/*# sourceMappingURL=bio.css.map */
