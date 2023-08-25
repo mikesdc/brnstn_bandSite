@@ -4,6 +4,7 @@ let comments = [
     id: 3,
     name: "Connor Walton",
     date: "02/17/2021",
+    timestamp: "02/17/2021",
     comment:
       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
   },
@@ -11,6 +12,7 @@ let comments = [
     id: 2,
     name: "Emilie Beach",
     date: "01/09/2021",
+    timestamp: "01/09/2021",
     comment:
       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
   },
@@ -18,6 +20,7 @@ let comments = [
     id: 1,
     name: "Miles Acosta",
     date: "12/20/2020",
+    timestamp: "12/20/2020",
     comment:
       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
   },
@@ -114,6 +117,7 @@ let addCommentToArray = function () {
     id: comments[0].id + 1,
     name: formNameValue,
     date: dateTimestamp,
+    timestamp: new Date(),
     comment: formCommentValue,
   };
 
@@ -167,5 +171,33 @@ commentField.addEventListener("click", () => {
   commentField.setAttribute("placeholder", "Add a new comment");
 });
 
-
 //starting responsive date
+
+console.log(new Date("2023/03/09"));
+
+const relativeTimestamp = function (timestamp) {
+  const rightNow = new Date();
+  const pastDate = new Date(timestamp);
+
+  let dateDifference = (rightNow - pastDate) / 1000;
+
+  console.log(dateDifference);
+
+  if (dateDifference < 120) {
+    return "A few seconds ago";
+  } else if (dateDifference < 3600) {
+    return `${Math.ceil(dateDifference / 60)} minutes ago`;
+  } else if (dateDifference < 86400) {
+    return `${Math.ceil(dateDifference / 60 / 60)} hours ago`;
+  } else if (dateDifference < 518400) {
+    return `${Math.ceil(dateDifference / 60 / 60 / 24)} days ago`;
+  } else if (dateDifference < 1209600) {
+    return `${Math.ceil(dateDifference / 60 / 60 / 24 / 7)} weeks ago`;
+  } else if (dateDifference < 3628800) {
+    return "About a month ago";
+  } else if (dateDifference < 4838400) {
+    return `${Math.ceil(dateDifference / 60 / 60 / 24 / 30)} months ago`;
+  } else if (dateDifference < 15552000) {
+    return pastDate;
+  }
+};
