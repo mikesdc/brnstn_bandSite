@@ -39,6 +39,59 @@ const commentsContainer = document.querySelector(
 );
 
 let displayComment = function (index) {
+
+// function for creating relative date
+
+  const relativeTimestamp = function (timestamp) {
+    const rightNow = new Date();
+    const pastDate = new Date(timestamp);
+  
+    let dateDifference = (rightNow - pastDate) / 1000;
+  
+    console.log(dateDifference);
+  
+    if (dateDifference < 120) {
+      return "A few seconds ago";
+    } else if (dateDifference < 3600) {
+      return `${Math.ceil(dateDifference / 60)} minutes ago`;
+    } else if (dateDifference < 86400) {
+      return `${Math.ceil(dateDifference / 60 / 60)} hours ago`;
+    } else if (dateDifference < 518400) {
+      return `${Math.ceil(dateDifference / 60 / 60 / 24)} days ago`;
+    } else if (dateDifference < 1209600) {
+      return `${Math.ceil(dateDifference / 60 / 60 / 24 / 7)} weeks ago`;
+    } else if (dateDifference < 3628800) {
+      return "About a month ago";
+    } else if (dateDifference < 4838400) {
+      return `${Math.ceil(dateDifference / 60 / 60 / 24 / 30)} months ago`;
+    } else {
+  
+      const month = pastDate.getMonth() + 1;
+      const date = pastDate.getDate();
+      const year = pastDate.getFullYear();
+    
+      let monthTimestamp;
+      if (month.toString().length == 2) {
+        monthTimestamp = month.toString();
+      } else {
+        monthTimestamp = `0${month}`;
+      }
+    
+      let dateNumTimestamp;
+      if (date.toString().length == 2) {
+        dateNumTimestamp = date.toString();
+      } else {
+        dateNumTimestamp = `0${date}`;
+      }
+    
+      const dateTimestamp = `${monthTimestamp}/${dateNumTimestamp}/${year}`;
+      return dateTimestamp;
+  
+    }
+  };
+  
+  // building comment card and inserting comment details with relative date
+
   const cardDiv = document.createElement("div");
   commentsContainer.append(cardDiv);
   cardDiv.className = "comments__comment-card";
@@ -63,12 +116,13 @@ let displayComment = function (index) {
   const headerDateDiv = document.createElement("div");
   contentHeaderDiv.append(headerDateDiv);
   headerDateDiv.className = "comments__comment-header-date";
-  headerDateDiv.innerHTML = comments[index].date;
+  headerDateDiv.innerText = relativeTimestamp(comments[index].timestamp);
 
   const commentDiv = document.createElement("div");
   contentDiv.append(commentDiv);
   commentDiv.className = "comments__comment-comment";
   commentDiv.innerText = comments[index].comment;
+  
 };
 
 function displayCommentsArray() {
@@ -171,33 +225,56 @@ commentField.addEventListener("click", () => {
   commentField.setAttribute("placeholder", "Add a new comment");
 });
 
-//starting responsive date
 
-console.log(new Date("2023/03/09"));
 
-const relativeTimestamp = function (timestamp) {
-  const rightNow = new Date();
-  const pastDate = new Date(timestamp);
+// //starting responsive date
 
-  let dateDifference = (rightNow - pastDate) / 1000;
+// console.log(new Date("2023/03/09"));
 
-  console.log(dateDifference);
+// const relativeTimestamp = function (timestamp) {
+//   const rightNow = new Date();
+//   const pastDate = new Date(timestamp);
 
-  if (dateDifference < 120) {
-    return "A few seconds ago";
-  } else if (dateDifference < 3600) {
-    return `${Math.ceil(dateDifference / 60)} minutes ago`;
-  } else if (dateDifference < 86400) {
-    return `${Math.ceil(dateDifference / 60 / 60)} hours ago`;
-  } else if (dateDifference < 518400) {
-    return `${Math.ceil(dateDifference / 60 / 60 / 24)} days ago`;
-  } else if (dateDifference < 1209600) {
-    return `${Math.ceil(dateDifference / 60 / 60 / 24 / 7)} weeks ago`;
-  } else if (dateDifference < 3628800) {
-    return "About a month ago";
-  } else if (dateDifference < 4838400) {
-    return `${Math.ceil(dateDifference / 60 / 60 / 24 / 30)} months ago`;
-  } else if (dateDifference < 15552000) {
-    return pastDate;
-  }
-};
+//   let dateDifference = (rightNow - pastDate) / 1000;
+
+//   console.log(dateDifference);
+
+//   if (dateDifference < 120) {
+//     return "A few seconds ago";
+//   } else if (dateDifference < 3600) {
+//     return `${Math.ceil(dateDifference / 60)} minutes ago`;
+//   } else if (dateDifference < 86400) {
+//     return `${Math.ceil(dateDifference / 60 / 60)} hours ago`;
+//   } else if (dateDifference < 518400) {
+//     return `${Math.ceil(dateDifference / 60 / 60 / 24)} days ago`;
+//   } else if (dateDifference < 1209600) {
+//     return `${Math.ceil(dateDifference / 60 / 60 / 24 / 7)} weeks ago`;
+//   } else if (dateDifference < 3628800) {
+//     return "About a month ago";
+//   } else if (dateDifference < 4838400) {
+//     return `${Math.ceil(dateDifference / 60 / 60 / 24 / 30)} months ago`;
+//   } else {
+
+//     const month = pastDate.getMonth() + 1;
+//     const date = pastDate.getDate();
+//     const year = pastDate.getFullYear();
+  
+//     let monthTimestamp;
+//     if (month.toString().length == 2) {
+//       monthTimestamp = month.toString();
+//     } else {
+//       monthTimestamp = `0${month}`;
+//     }
+  
+//     let dateNumTimestamp;
+//     if (date.toString().length == 2) {
+//       dateNumTimestamp = date.toString();
+//     } else {
+//       dateNumTimestamp = `0${date}`;
+//     }
+  
+//     const dateTimestamp = `${monthTimestamp}/${dateNumTimestamp}/${year}`;
+//     return dateTimestamp;
+
+//   }
+// };
