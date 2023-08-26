@@ -1,30 +1,31 @@
-// starting comments array
-let comments = [
-  {
-    id: 3,
-    name: "Connor Walton",
-    date: "02/17/2021",
-    timestamp: "02/17/2021",
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    id: 2,
-    name: "Emilie Beach",
-    date: "01/09/2021",
-    timestamp: "01/09/2021",
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    id: 1,
-    name: "Miles Acosta",
-    date: "12/20/2020",
-    timestamp: "12/20/2020",
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
+// // starting comments array
+
+// let comments = [
+//   {
+//     id: 3,
+//     name: "Connor Walton",
+//     date: "02/17/2021",
+//     timestamp: "02/17/2021",
+//     comment:
+//       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+//   },
+//   {
+//     id: 2,
+//     name: "Emilie Beach",
+//     date: "01/09/2021",
+//     timestamp: "01/09/2021",
+//     comment:
+//       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+//   },
+//   {
+//     id: 1,
+//     name: "Miles Acosta",
+//     date: "12/20/2020",
+//     timestamp: "12/20/2020",
+//     comment:
+//       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+//   },
+// ];
 
 //compiling comments onto HTML
 
@@ -38,102 +39,96 @@ const commentsContainer = document.querySelector(
   ".comments__comments-container"
 );
 
-let displayComment = function (index) {
+// let displayComment = function (index) {
+//   // function for creating relative date
 
-// function for creating relative date
+//   const relativeTimestamp = function (timestamp) {
+//     const rightNow = new Date();
+//     const pastDate = new Date(timestamp);
 
-  const relativeTimestamp = function (timestamp) {
-    const rightNow = new Date();
-    const pastDate = new Date(timestamp);
-  
-    let dateDifference = (rightNow - pastDate) / 1000;
-  
-    console.log(dateDifference);
-  
-    if (dateDifference < 120) {
-      return "A few seconds ago";
-    } else if (dateDifference < 3600) {
-      return `${Math.ceil(dateDifference / 60)} minutes ago`;
-    } else if (dateDifference < 86400) {
-      return `${Math.ceil(dateDifference / 60 / 60)} hours ago`;
-    } else if (dateDifference < 518400) {
-      return `${Math.ceil(dateDifference / 60 / 60 / 24)} days ago`;
-    } else if (dateDifference < 1209600) {
-      return `${Math.ceil(dateDifference / 60 / 60 / 24 / 7)} weeks ago`;
-    } else if (dateDifference < 3628800) {
-      return "About a month ago";
-    } else if (dateDifference < 4838400) {
-      return `${Math.ceil(dateDifference / 60 / 60 / 24 / 30)} months ago`;
-    } else {
-  
-      const month = pastDate.getMonth() + 1;
-      const date = pastDate.getDate();
-      const year = pastDate.getFullYear();
-    
-      let monthTimestamp;
-      if (month.toString().length == 2) {
-        monthTimestamp = month.toString();
-      } else {
-        monthTimestamp = `0${month}`;
-      }
-    
-      let dateNumTimestamp;
-      if (date.toString().length == 2) {
-        dateNumTimestamp = date.toString();
-      } else {
-        dateNumTimestamp = `0${date}`;
-      }
-    
-      const dateTimestamp = `${monthTimestamp}/${dateNumTimestamp}/${year}`;
-      return dateTimestamp;
-  
-    }
-  };
-  
-  // building comment card and inserting comment details with relative date
+//     let dateDifference = (rightNow - pastDate) / 1000;
 
-  const cardDiv = document.createElement("div");
-  commentsContainer.append(cardDiv);
-  cardDiv.className = "comments__comment-card";
+//     if (dateDifference < 120) {
+//       return "A few seconds ago";
+//     } else if (dateDifference < 3600) {
+//       return `${Math.ceil(dateDifference / 60)} minutes ago`;
+//     } else if (dateDifference < 86400) {
+//       return `${Math.ceil(dateDifference / 60 / 60)} hours ago`;
+//     } else if (dateDifference < 518400) {
+//       return `${Math.ceil(dateDifference / 60 / 60 / 24)} days ago`;
+//     } else if (dateDifference < 1209600) {
+//       return `${Math.ceil(dateDifference / 60 / 60 / 24 / 7)} weeks ago`;
+//     } else if (dateDifference < 3628800) {
+//       return "About a month ago";
+//     } else if (dateDifference < 4838400) {
+//       return `${Math.ceil(dateDifference / 60 / 60 / 24 / 30)} months ago`;
+//     } else {
+//       const month = pastDate.getMonth() + 1;
+//       const date = pastDate.getDate();
+//       const year = pastDate.getFullYear();
 
-  const photoDiv = document.createElement("div");
-  cardDiv.append(photoDiv);
-  photoDiv.className = "comments__comment-photo";
+//       let monthTimestamp;
+//       if (month.toString().length == 2) {
+//         monthTimestamp = month.toString();
+//       } else {
+//         monthTimestamp = `0${month}`;
+//       }
 
-  const contentDiv = document.createElement("div");
-  cardDiv.append(contentDiv);
-  contentDiv.className = "comments__comment-content";
+//       let dateNumTimestamp;
+//       if (date.toString().length == 2) {
+//         dateNumTimestamp = date.toString();
+//       } else {
+//         dateNumTimestamp = `0${date}`;
+//       }
 
-  const contentHeaderDiv = document.createElement("div");
-  contentDiv.append(contentHeaderDiv);
-  contentHeaderDiv.className = "comments__comment-header";
+//       const dateTimestamp = `${monthTimestamp}/${dateNumTimestamp}/${year}`;
+//       return dateTimestamp;
+//     }
+//   };
 
-  const headerNameDiv = document.createElement("div");
-  contentHeaderDiv.append(headerNameDiv);
-  headerNameDiv.className = "comments__comment-header-name";
-  headerNameDiv.innerText = comments[index].name;
+//   // building comment card and inserting comment details with relative date
 
-  const headerDateDiv = document.createElement("div");
-  contentHeaderDiv.append(headerDateDiv);
-  headerDateDiv.className = "comments__comment-header-date";
-  headerDateDiv.innerText = relativeTimestamp(comments[index].timestamp);
+//   const cardDiv = document.createElement("div");
+//   commentsContainer.append(cardDiv);
+//   cardDiv.className = "comments__comment-card";
 
-  const commentDiv = document.createElement("div");
-  contentDiv.append(commentDiv);
-  commentDiv.className = "comments__comment-comment";
-  commentDiv.innerText = comments[index].comment;
-  
-};
+//   const photoDiv = document.createElement("div");
+//   cardDiv.append(photoDiv);
+//   photoDiv.className = "comments__comment-photo";
 
-function displayCommentsArray() {
-  clearCommentsContainer();
+//   const contentDiv = document.createElement("div");
+//   cardDiv.append(contentDiv);
+//   contentDiv.className = "comments__comment-content";
 
-  for (i = 0; i < comments.length; i++) {
-    displayComment(i);
-  }
-}
+//   const contentHeaderDiv = document.createElement("div");
+//   contentDiv.append(contentHeaderDiv);
+//   contentHeaderDiv.className = "comments__comment-header";
 
-displayCommentsArray();
+//   const headerNameDiv = document.createElement("div");
+//   contentHeaderDiv.append(headerNameDiv);
+//   headerNameDiv.className = "comments__comment-header-name";
+//   headerNameDiv.innerText = comments[index].name;
+
+//   const headerDateDiv = document.createElement("div");
+//   contentHeaderDiv.append(headerDateDiv);
+//   headerDateDiv.className = "comments__comment-header-date";
+//   headerDateDiv.innerText = relativeTimestamp(comments[index].timestamp);
+
+//   const commentDiv = document.createElement("div");
+//   contentDiv.append(commentDiv);
+//   commentDiv.className = "comments__comment-comment";
+//   commentDiv.innerText = comments[index].comment;
+// };
+
+// function displayCommentsArray() {
+//   clearCommentsContainer();
+
+//   for (i = 0; i < comments.length; i++) {
+//     displayComment(i);
+//   }
+// }
+
+// displayCommentsArray();
 
 //Section for adding new comment to array
 
@@ -225,56 +220,124 @@ commentField.addEventListener("click", () => {
   commentField.setAttribute("placeholder", "Add a new comment");
 });
 
+// API code
 
+let apiKey = "76939858-13a2-4b72-aac5-8a04f51020bd";
 
-// //starting responsive date
+function setNewApiKey() {
+  let apiKey = "";
+}
 
-// console.log(new Date("2023/03/09"));
+let apiMainURL = "https://project-1-api.herokuapp.com/?api_key=" + apiKey;
+let commentsURL =
+  "https://project-1-api.herokuapp.com/comments/?api_key=" + apiKey;
 
-// const relativeTimestamp = function (timestamp) {
-//   const rightNow = new Date();
-//   const pastDate = new Date(timestamp);
+//https://project-1-api.herokuapp.com/?api_key=76939858-13a2-4b72-aac5-8a04f51020bd
 
-//   let dateDifference = (rightNow - pastDate) / 1000;
+const p = axios.get(commentsURL);
+p.then((result) => {
+  console.log(result);
+});
 
-//   console.log(dateDifference);
+p.catch((error) => {
+  console.log(error);
+});
 
-//   if (dateDifference < 120) {
-//     return "A few seconds ago";
-//   } else if (dateDifference < 3600) {
-//     return `${Math.ceil(dateDifference / 60)} minutes ago`;
-//   } else if (dateDifference < 86400) {
-//     return `${Math.ceil(dateDifference / 60 / 60)} hours ago`;
-//   } else if (dateDifference < 518400) {
-//     return `${Math.ceil(dateDifference / 60 / 60 / 24)} days ago`;
-//   } else if (dateDifference < 1209600) {
-//     return `${Math.ceil(dateDifference / 60 / 60 / 24 / 7)} weeks ago`;
-//   } else if (dateDifference < 3628800) {
-//     return "About a month ago";
-//   } else if (dateDifference < 4838400) {
-//     return `${Math.ceil(dateDifference / 60 / 60 / 24 / 30)} months ago`;
-//   } else {
+axios.get(commentsURL).then((result) => {
+  const commentData = result.data;
+  console.log(commentData);
 
-//     const month = pastDate.getMonth() + 1;
-//     const date = pastDate.getDate();
-//     const year = pastDate.getFullYear();
-  
-//     let monthTimestamp;
-//     if (month.toString().length == 2) {
-//       monthTimestamp = month.toString();
-//     } else {
-//       monthTimestamp = `0${month}`;
-//     }
-  
-//     let dateNumTimestamp;
-//     if (date.toString().length == 2) {
-//       dateNumTimestamp = date.toString();
-//     } else {
-//       dateNumTimestamp = `0${date}`;
-//     }
-  
-//     const dateTimestamp = `${monthTimestamp}/${dateNumTimestamp}/${year}`;
-//     return dateTimestamp;
+clearCommentsContainer();
 
-//   }
-// };
+  let displayAPIComment = function (index) {
+    // function for creating relative date
+
+    const relativeTimestamp = function (timestamp) {
+      const rightNow = new Date();
+      const pastDate = new Date(timestamp);
+
+      let dateDifference = (rightNow - pastDate) / 1000;
+
+      if (dateDifference < 120) {
+        return "A few seconds ago";
+      } else if (dateDifference < 3600) {
+        return `${Math.ceil(dateDifference / 60)} minutes ago`;
+      } else if (dateDifference < 86400) {
+        return `${Math.ceil(dateDifference / 60 / 60)} hours ago`;
+      } else if (dateDifference < 518400) {
+        return `${Math.ceil(dateDifference / 60 / 60 / 24)} days ago`;
+      } else if (dateDifference < 1209600) {
+        return `${Math.ceil(dateDifference / 60 / 60 / 24 / 7)} weeks ago`;
+      } else if (dateDifference < 3628800) {
+        return "About a month ago";
+      } else if (dateDifference < 4838400) {
+        return `${Math.ceil(dateDifference / 60 / 60 / 24 / 30)} months ago`;
+      } else {
+        const month = pastDate.getMonth() + 1;
+        const date = pastDate.getDate();
+        const year = pastDate.getFullYear();
+
+        let monthTimestamp;
+        if (month.toString().length == 2) {
+          monthTimestamp = month.toString();
+        } else {
+          monthTimestamp = `0${month}`;
+        }
+
+        let dateNumTimestamp;
+        if (date.toString().length == 2) {
+          dateNumTimestamp = date.toString();
+        } else {
+          dateNumTimestamp = `0${date}`;
+        }
+
+        const dateTimestamp = `${monthTimestamp}/${dateNumTimestamp}/${year}`;
+        return dateTimestamp;
+      }
+    };
+
+    // building comment card and inserting comment details with relative date
+
+    const cardDiv = document.createElement("div");
+    commentsContainer.append(cardDiv);
+    cardDiv.className = "comments__comment-card";
+
+    const photoDiv = document.createElement("div");
+    cardDiv.append(photoDiv);
+    photoDiv.className = "comments__comment-photo";
+
+    const contentDiv = document.createElement("div");
+    cardDiv.append(contentDiv);
+    contentDiv.className = "comments__comment-content";
+
+    const contentHeaderDiv = document.createElement("div");
+    contentDiv.append(contentHeaderDiv);
+    contentHeaderDiv.className = "comments__comment-header";
+
+    const headerNameDiv = document.createElement("div");
+    contentHeaderDiv.append(headerNameDiv);
+    headerNameDiv.className = "comments__comment-header-name";
+    headerNameDiv.innerText = commentData[index].name;
+
+    const headerDateDiv = document.createElement("div");
+    contentHeaderDiv.append(headerDateDiv);
+    headerDateDiv.className = "comments__comment-header-date";
+    headerDateDiv.innerText = relativeTimestamp(commentData[index].timestamp);
+
+    const commentDiv = document.createElement("div");
+    contentDiv.append(commentDiv);
+    commentDiv.className = "comments__comment-comment";
+    commentDiv.innerText = commentData[index].comment;
+  };
+
+  function displayAPICommentsArray() {
+    clearCommentsContainer();
+
+    for (i = 0; i < commentData.length; i++) {
+      displayAPIComment(i);
+    }
+  }
+
+  clearCommentsContainer();
+  displayAPICommentsArray();
+})
