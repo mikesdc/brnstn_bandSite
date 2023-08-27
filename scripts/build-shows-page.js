@@ -162,16 +162,6 @@ let insertTopRow = function () {
   buttonHeader.innerText = "empty";
 };
 
-// event listener for selected row
-
-const rowsList1 = document.querySelectorAll(".tour-row");
-for (let i = 0; i < rowsList1.length; i++) {
-  rowsList1[i].addEventListener("click", function () {
-    rowsList1.forEach((element) => element.classList.remove("active"));
-    rowsList1[i].classList.add("active");
-  });
-}
-
 // get shows data from API, then build shows rows
 
 let shows = [];
@@ -186,11 +176,21 @@ axios
   .get(
     "https://project-1-api.herokuapp.com/showdates/?api_key=76939858-13a2-4b72-aac5-8a04f51020bd"
   )
+
   .then((result) => {
     shows = result.data;
     clearShowsContainer();
     insertTopRow();
-  })
-  .then((nextAction) => {
+
     displayShowsArray();
+
+    // event listener for selected row
+    const rowsList1 = document.querySelectorAll(".tour-row");
+
+    for (let i = 0; i < rowsList1.length; i++) {
+      rowsList1[i].addEventListener("click", function () {
+        rowsList1.forEach((element) => element.classList.remove("active"));
+        rowsList1[i].classList.add("active");
+      });
+    }
   });
