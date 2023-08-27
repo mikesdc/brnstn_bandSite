@@ -18,8 +18,6 @@ let apiMainURL = "https://project-1-api.herokuapp.com/?api_key=" + apiKey;
 let commentsURL =
   "https://project-1-api.herokuapp.com/comments/?api_key=" + apiKey;
 
-//https://project-1-api.herokuapp.com/?api_key=76939858-13a2-4b72-aac5-8a04f51020bd
-
 //function to pull comments from API and display on page
 
 const displayComments = () => {

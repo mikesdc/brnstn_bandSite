@@ -19,7 +19,6 @@ clearShowsContainer();
 
 const convertDateFormat = (input) => {
   let conversion = new Date(input);
-  console.log(conversion);
 
   const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
   const months = [
@@ -38,13 +37,9 @@ const convertDateFormat = (input) => {
   ];
 
   const ddd = daysOfWeek[conversion.getDay()];
-  console.log(ddd);
   const mmm = months[conversion.getMonth()];
-  console.log(mmm);
   const DD = conversion.getDate();
-  console.log(DD);
   const YYYY = conversion.getFullYear();
-  console.log(YYYY);
 
   let DDformatted;
   if (DD.toString().length == 2) {
@@ -177,7 +172,7 @@ for (let i = 0; i < rowsList1.length; i++) {
   });
 }
 
-// get Shows data, then build shows rows
+// get shows data from API, then build shows rows
 
 let shows = [];
 
@@ -192,7 +187,6 @@ axios
     "https://project-1-api.herokuapp.com/showdates/?api_key=76939858-13a2-4b72-aac5-8a04f51020bd"
   )
   .then((result) => {
-    console.log(result.data);
     shows = result.data;
     clearShowsContainer();
     insertTopRow();
@@ -200,6 +194,3 @@ axios
   .then((nextAction) => {
     displayShowsArray();
   });
-
-  // replicate cards for each array object
-
