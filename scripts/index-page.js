@@ -1,138 +1,140 @@
-// // starting comments array
+//function to clear all comments from the page
 
-// let comments = [
-//   {
-//     id: 3,
-//     name: "Connor Walton",
-//     date: "02/17/2021",
-//     timestamp: "02/17/2021",
-//     comment:
-//       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-//   },
-//   {
-//     id: 2,
-//     name: "Emilie Beach",
-//     date: "01/09/2021",
-//     timestamp: "01/09/2021",
-//     comment:
-//       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-//   },
-//   {
-//     id: 1,
-//     name: "Miles Acosta",
-//     date: "12/20/2020",
-//     timestamp: "12/20/2020",
-//     comment:
-//       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-//   },
-// ];
-
-//compiling comments onto HTML
-
-//function to clear all comments
-function clearCommentsContainer() {
-  commentsContainer.innerHTML = "";
-}
-
-//function to generate a comment card element, and add comment contents
 const commentsContainer = document.querySelector(
   ".comments__comments-container"
 );
 
-// let displayComment = function (index) {
-//   // function for creating relative date
+function clearCommentsContainer() {
+  commentsContainer.innerHTML = "";
+}
 
-//   const relativeTimestamp = function (timestamp) {
-//     const rightNow = new Date();
-//     const pastDate = new Date(timestamp);
+// Getting comments data from API
 
-//     let dateDifference = (rightNow - pastDate) / 1000;
+//separating apiKey in order to change API keys when needed
 
-//     if (dateDifference < 120) {
-//       return "A few seconds ago";
-//     } else if (dateDifference < 3600) {
-//       return `${Math.ceil(dateDifference / 60)} minutes ago`;
-//     } else if (dateDifference < 86400) {
-//       return `${Math.ceil(dateDifference / 60 / 60)} hours ago`;
-//     } else if (dateDifference < 518400) {
-//       return `${Math.ceil(dateDifference / 60 / 60 / 24)} days ago`;
-//     } else if (dateDifference < 1209600) {
-//       return `${Math.ceil(dateDifference / 60 / 60 / 24 / 7)} weeks ago`;
-//     } else if (dateDifference < 3628800) {
-//       return "About a month ago";
-//     } else if (dateDifference < 4838400) {
-//       return `${Math.ceil(dateDifference / 60 / 60 / 24 / 30)} months ago`;
-//     } else {
-//       const month = pastDate.getMonth() + 1;
-//       const date = pastDate.getDate();
-//       const year = pastDate.getFullYear();
+let apiKey = "16980c9b-44c4-40fb-8942-b040eccfbdc3";
 
-//       let monthTimestamp;
-//       if (month.toString().length == 2) {
-//         monthTimestamp = month.toString();
-//       } else {
-//         monthTimestamp = `0${month}`;
-//       }
+let apiMainURL = "https://project-1-api.herokuapp.com/?api_key=" + apiKey;
+let commentsURL =
+  "https://project-1-api.herokuapp.com/comments/?api_key=" + apiKey;
 
-//       let dateNumTimestamp;
-//       if (date.toString().length == 2) {
-//         dateNumTimestamp = date.toString();
-//       } else {
-//         dateNumTimestamp = `0${date}`;
-//       }
+//https://project-1-api.herokuapp.com/?api_key=76939858-13a2-4b72-aac5-8a04f51020bd
 
-//       const dateTimestamp = `${monthTimestamp}/${dateNumTimestamp}/${year}`;
-//       return dateTimestamp;
-//     }
-//   };
+//function to pull comments from API and display on page
 
-//   // building comment card and inserting comment details with relative date
+const displayComments = () => {
+  axios
+    .get(commentsURL)
+    .then((result) => {
+      const commentData = result.data;
+      commentData.sort((a, b) => b.timestamp - a.timestamp);
 
-//   const cardDiv = document.createElement("div");
-//   commentsContainer.append(cardDiv);
-//   cardDiv.className = "comments__comment-card";
+      clearCommentsContainer();
 
-//   const photoDiv = document.createElement("div");
-//   cardDiv.append(photoDiv);
-//   photoDiv.className = "comments__comment-photo";
+      let displayAPIComment = function (index) {
+        // function for creating dynamic timestamp
 
-//   const contentDiv = document.createElement("div");
-//   cardDiv.append(contentDiv);
-//   contentDiv.className = "comments__comment-content";
+        const relativeTimestamp = function (timestamp) {
+          const rightNow = new Date();
+          const pastDate = new Date(timestamp);
 
-//   const contentHeaderDiv = document.createElement("div");
-//   contentDiv.append(contentHeaderDiv);
-//   contentHeaderDiv.className = "comments__comment-header";
+          let dateDifference = (rightNow - pastDate) / 1000;
 
-//   const headerNameDiv = document.createElement("div");
-//   contentHeaderDiv.append(headerNameDiv);
-//   headerNameDiv.className = "comments__comment-header-name";
-//   headerNameDiv.innerText = comments[index].name;
+          if (dateDifference < 120) {
+            return "A few seconds ago";
+          } else if (dateDifference < 3600) {
+            return `${Math.ceil(dateDifference / 60)} minutes ago`;
+          } else if (dateDifference < 86400) {
+            return `${Math.ceil(dateDifference / 60 / 60)} hours ago`;
+          } else if (dateDifference < 518400) {
+            return `${Math.ceil(dateDifference / 60 / 60 / 24)} days ago`;
+          } else if (dateDifference < 1209600) {
+            return `${Math.ceil(dateDifference / 60 / 60 / 24 / 7)} weeks ago`;
+          } else if (dateDifference < 3628800) {
+            return "About a month ago";
+          } else if (dateDifference < 4838400) {
+            return `${Math.ceil(
+              dateDifference / 60 / 60 / 24 / 30
+            )} months ago`;
+          } else {
+            const month = pastDate.getMonth() + 1;
+            const date = pastDate.getDate();
+            const year = pastDate.getFullYear();
 
-//   const headerDateDiv = document.createElement("div");
-//   contentHeaderDiv.append(headerDateDiv);
-//   headerDateDiv.className = "comments__comment-header-date";
-//   headerDateDiv.innerText = relativeTimestamp(comments[index].timestamp);
+            let monthTimestamp;
+            if (month.toString().length == 2) {
+              monthTimestamp = month.toString();
+            } else {
+              monthTimestamp = `0${month}`;
+            }
 
-//   const commentDiv = document.createElement("div");
-//   contentDiv.append(commentDiv);
-//   commentDiv.className = "comments__comment-comment";
-//   commentDiv.innerText = comments[index].comment;
-// };
+            let dateNumTimestamp;
+            if (date.toString().length == 2) {
+              dateNumTimestamp = date.toString();
+            } else {
+              dateNumTimestamp = `0${date}`;
+            }
 
-// function displayCommentsArray() {
-//   clearCommentsContainer();
+            const dateTimestamp = `${monthTimestamp}/${dateNumTimestamp}/${year}`;
+            return dateTimestamp;
+          }
+        };
 
-//   for (i = 0; i < comments.length; i++) {
-//     displayComment(i);
-//   }
-// }
+        // building comment card and inserting comment details with relative date
 
-// displayCommentsArray();
+        const cardDiv = document.createElement("div");
+        commentsContainer.append(cardDiv);
+        cardDiv.className = "comments__comment-card";
 
-//Section for adding new comment to array
+        const photoDiv = document.createElement("div");
+        cardDiv.append(photoDiv);
+        photoDiv.className = "comments__comment-photo";
 
-//setting up functions for event listener
+        const contentDiv = document.createElement("div");
+        cardDiv.append(contentDiv);
+        contentDiv.className = "comments__comment-content";
+
+        const contentHeaderDiv = document.createElement("div");
+        contentDiv.append(contentHeaderDiv);
+        contentHeaderDiv.className = "comments__comment-header";
+
+        const headerNameDiv = document.createElement("div");
+        contentHeaderDiv.append(headerNameDiv);
+        headerNameDiv.className = "comments__comment-header-name";
+        headerNameDiv.innerText = commentData[index].name;
+
+        const headerDateDiv = document.createElement("div");
+        contentHeaderDiv.append(headerDateDiv);
+        headerDateDiv.className = "comments__comment-header-date";
+        headerDateDiv.innerText = relativeTimestamp(
+          commentData[index].timestamp
+        );
+
+        const commentDiv = document.createElement("div");
+        contentDiv.append(commentDiv);
+        commentDiv.className = "comments__comment-comment";
+        commentDiv.innerText = commentData[index].comment;
+      };
+
+      function displayAPICommentsArray() {
+        clearCommentsContainer();
+
+        for (i = 0; i < commentData.length; i++) {
+          displayAPIComment(i);
+        }
+      }
+
+      clearCommentsContainer();
+      displayAPICommentsArray();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+displayComments();
+
+//function for posting new comment to API and refreshing comments on page
 
 let addCommentToArray = function () {
   const nameField = document.getElementById("nameField");
@@ -141,36 +143,14 @@ let addCommentToArray = function () {
   const commentField = document.getElementById("commentField");
   let formCommentValue = commentField.value;
 
-  const currentDate = new Date();
-  const month = currentDate.getMonth() + 1;
-  const date = currentDate.getDate();
-  const year = currentDate.getFullYear();
-
-  let monthTimestamp;
-  if (month.toString().length == 2) {
-    monthTimestamp = month.toString();
-  } else {
-    monthTimestamp = `0${month}`;
-  }
-
-  let dateNumTimestamp;
-  if (date.toString().length == 2) {
-    dateNumTimestamp = date.toString();
-  } else {
-    dateNumTimestamp = `0${date}`;
-  }
-
-  const dateTimestamp = `${monthTimestamp}/${dateNumTimestamp}/${year}`;
-
   const newComment = {
-    id: comments[0].id + 1,
     name: formNameValue,
-    date: dateTimestamp,
-    timestamp: new Date(),
     comment: formCommentValue,
   };
 
-  comments.unshift(newComment);
+  axios.post(commentsURL, newComment).then(() => {
+    displayComments();
+  });
 };
 
 // Button Behaviour - including form validation
@@ -193,7 +173,6 @@ function formButtonHandler(event) {
 
   if (nameField.value && commentField.value) {
     addCommentToArray();
-    displayCommentsArray();
 
     //clear form contents and any error states
 
@@ -220,124 +199,23 @@ commentField.addEventListener("click", () => {
   commentField.setAttribute("placeholder", "Add a new comment");
 });
 
-// API code
 
-let apiKey = "76939858-13a2-4b72-aac5-8a04f51020bd";
 
-function setNewApiKey() {
-  let apiKey = "";
+// function to load a fresh group of comments (only present for ease of review)
+
+function getNewApiKey() {
+  apiKeyTest = axios
+    .get("https://project-1-api.herokuapp.com/register/")
+    .then((result) => {
+      apiKeyNew = result.data.api_key;
+
+      apiMainURL = "https://project-1-api.herokuapp.com/?api_key=" + apiKeyNew;
+      commentsURL =
+        "https://project-1-api.herokuapp.com/comments/?api_key=" + apiKeyNew;
+
+      console.log("Getting new API key:");
+      console.log(result.data.api_key);
+      displayComments();
+      console.log("Comments from new API key loaded");
+    });
 }
-
-let apiMainURL = "https://project-1-api.herokuapp.com/?api_key=" + apiKey;
-let commentsURL =
-  "https://project-1-api.herokuapp.com/comments/?api_key=" + apiKey;
-
-//https://project-1-api.herokuapp.com/?api_key=76939858-13a2-4b72-aac5-8a04f51020bd
-
-const p = axios.get(commentsURL);
-p.then((result) => {
-  console.log(result);
-});
-
-p.catch((error) => {
-  console.log(error);
-});
-
-axios.get(commentsURL).then((result) => {
-  const commentData = result.data;
-  console.log(commentData);
-
-clearCommentsContainer();
-
-  let displayAPIComment = function (index) {
-    // function for creating relative date
-
-    const relativeTimestamp = function (timestamp) {
-      const rightNow = new Date();
-      const pastDate = new Date(timestamp);
-
-      let dateDifference = (rightNow - pastDate) / 1000;
-
-      if (dateDifference < 120) {
-        return "A few seconds ago";
-      } else if (dateDifference < 3600) {
-        return `${Math.ceil(dateDifference / 60)} minutes ago`;
-      } else if (dateDifference < 86400) {
-        return `${Math.ceil(dateDifference / 60 / 60)} hours ago`;
-      } else if (dateDifference < 518400) {
-        return `${Math.ceil(dateDifference / 60 / 60 / 24)} days ago`;
-      } else if (dateDifference < 1209600) {
-        return `${Math.ceil(dateDifference / 60 / 60 / 24 / 7)} weeks ago`;
-      } else if (dateDifference < 3628800) {
-        return "About a month ago";
-      } else if (dateDifference < 4838400) {
-        return `${Math.ceil(dateDifference / 60 / 60 / 24 / 30)} months ago`;
-      } else {
-        const month = pastDate.getMonth() + 1;
-        const date = pastDate.getDate();
-        const year = pastDate.getFullYear();
-
-        let monthTimestamp;
-        if (month.toString().length == 2) {
-          monthTimestamp = month.toString();
-        } else {
-          monthTimestamp = `0${month}`;
-        }
-
-        let dateNumTimestamp;
-        if (date.toString().length == 2) {
-          dateNumTimestamp = date.toString();
-        } else {
-          dateNumTimestamp = `0${date}`;
-        }
-
-        const dateTimestamp = `${monthTimestamp}/${dateNumTimestamp}/${year}`;
-        return dateTimestamp;
-      }
-    };
-
-    // building comment card and inserting comment details with relative date
-
-    const cardDiv = document.createElement("div");
-    commentsContainer.append(cardDiv);
-    cardDiv.className = "comments__comment-card";
-
-    const photoDiv = document.createElement("div");
-    cardDiv.append(photoDiv);
-    photoDiv.className = "comments__comment-photo";
-
-    const contentDiv = document.createElement("div");
-    cardDiv.append(contentDiv);
-    contentDiv.className = "comments__comment-content";
-
-    const contentHeaderDiv = document.createElement("div");
-    contentDiv.append(contentHeaderDiv);
-    contentHeaderDiv.className = "comments__comment-header";
-
-    const headerNameDiv = document.createElement("div");
-    contentHeaderDiv.append(headerNameDiv);
-    headerNameDiv.className = "comments__comment-header-name";
-    headerNameDiv.innerText = commentData[index].name;
-
-    const headerDateDiv = document.createElement("div");
-    contentHeaderDiv.append(headerDateDiv);
-    headerDateDiv.className = "comments__comment-header-date";
-    headerDateDiv.innerText = relativeTimestamp(commentData[index].timestamp);
-
-    const commentDiv = document.createElement("div");
-    contentDiv.append(commentDiv);
-    commentDiv.className = "comments__comment-comment";
-    commentDiv.innerText = commentData[index].comment;
-  };
-
-  function displayAPICommentsArray() {
-    clearCommentsContainer();
-
-    for (i = 0; i < commentData.length; i++) {
-      displayAPIComment(i);
-    }
-  }
-
-  clearCommentsContainer();
-  displayAPICommentsArray();
-})
