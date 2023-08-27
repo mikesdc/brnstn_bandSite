@@ -1,54 +1,60 @@
-let shows = [
-  {
-    id: 1,
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    id: 2,
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    id: 3,
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    id: 4,
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    id: 5,
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    id: 6,
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
-
 //compiling HTML elements in shows section
 
 const showsContainer = document.querySelector(".shows");
 
 // clearing current shows list
 
-showsContainer.innerHTML = "";
+const clearShowsContainer = () => {
+  showsContainer.innerHTML = "";
 
-const showsHeader = document.createElement("h2");
-showsContainer.append(showsHeader);
-showsHeader.className = "heading";
-showsHeader.innerText = "Shows";
+  const showsHeader = document.createElement("h2");
+  showsContainer.append(showsHeader);
+  showsHeader.className = "heading";
+  showsHeader.innerText = "Shows";
+};
+
+clearShowsContainer();
+
+// convert date format
+
+const convertDateFormat = (input) => {
+  let conversion = new Date(input);
+  console.log(conversion);
+
+  const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  const ddd = daysOfWeek[conversion.getDay()];
+  console.log(ddd);
+  const mmm = months[conversion.getMonth()];
+  console.log(mmm);
+  const DD = conversion.getDate();
+  console.log(DD);
+  const YYYY = conversion.getFullYear();
+  console.log(YYYY);
+
+  let DDformatted;
+  if (DD.toString().length == 2) {
+    DDformatted = DD.toString();
+  } else {
+    DDformatted = `0${DD}`;
+  }
+
+  return `${ddd} ${mmm} ${DDformatted} ${YYYY}`;
+};
 
 // create tour cards
 
@@ -69,7 +75,7 @@ let insertShowsRow = function (index) {
   const date = document.createElement("div");
   dateCol.append(date);
   date.className = "date";
-  date.innerText = shows[index].date;
+  date.innerText = convertDateFormat(shows[index].date);
 
   const venueCol = document.createElement("div");
   tourRow.append(venueCol);
@@ -83,7 +89,7 @@ let insertShowsRow = function (index) {
   const venue = document.createElement("div");
   venueCol.append(venue);
   venue.className = "venue";
-  venue.innerText = shows[index].venue;
+  venue.innerText = shows[index].place;
 
   const locationCol = document.createElement("div");
   tourRow.append(locationCol);
@@ -161,17 +167,6 @@ let insertTopRow = function () {
   buttonHeader.innerText = "empty";
 };
 
-// replicate cards for each array object
-
-function displayShowsArray() {
-  for (i = 0; i < shows.length; i++) {
-    insertShowsRow(i);
-  }
-}
-
-insertTopRow();
-displayShowsArray();
-
 // event listener for selected row
 
 const rowsList1 = document.querySelectorAll(".tour-row");
@@ -181,3 +176,30 @@ for (let i = 0; i < rowsList1.length; i++) {
     rowsList1[i].classList.add("active");
   });
 }
+
+// get Shows data, then build shows rows
+
+let shows = [];
+
+function displayShowsArray() {
+  for (i = 0; i < shows.length; i++) {
+    insertShowsRow(i);
+  }
+}
+
+axios
+  .get(
+    "https://project-1-api.herokuapp.com/showdates/?api_key=76939858-13a2-4b72-aac5-8a04f51020bd"
+  )
+  .then((result) => {
+    console.log(result.data);
+    shows = result.data;
+    clearShowsContainer();
+    insertTopRow();
+  })
+  .then((nextAction) => {
+    displayShowsArray();
+  });
+
+  // replicate cards for each array object
+
