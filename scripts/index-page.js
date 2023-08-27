@@ -12,7 +12,7 @@ function clearCommentsContainer() {
 
 //separating apiKey in order to change API keys when needed
 
-let apiKey = "16980c9b-44c4-40fb-8942-b040eccfbdc3";
+let apiKey = "bbd7c43d-c574-4119-9dd2-206553ed85e2";
 
 let apiMainURL = "https://project-1-api.herokuapp.com/?api_key=" + apiKey;
 let commentsURL =
